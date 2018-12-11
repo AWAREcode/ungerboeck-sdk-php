@@ -1,0 +1,8 @@
+{
+    "modelPackage" : "Model",
+    "packagePath" : "UngerboeckSDK",
+    "artifactVersion" : "20.94.1.1",
+    "invokerPackage" : "FomF\\Ungerboeck\\Client",
+    "gitRepoId" : "ungerboeck-sdk-php",
+    "gitUserId" : "AWAREcode"
+}
