@@ -272,6 +272,7 @@ class UserDefinedFieldsApi
      * @param  int $sequence_number The sequence of the user defined field. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function userDefinedFieldsGetUserDefinedFieldsRequest($org_code, $issue_opportunity_class, $issue_opportunity_type, $sequence_number)
@@ -589,6 +590,7 @@ class UserDefinedFieldsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function userDefinedFieldsGetUserDefinedFieldsListRequest($org_code, $search)

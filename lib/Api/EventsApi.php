@@ -262,6 +262,7 @@ class EventsApi
      * @param  int $event_id The Event ID of the event. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventsGetEventRequest($org_code, $event_id)
@@ -551,6 +552,7 @@ class EventsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventsGetEventsListRequest($org_code, $search)
@@ -831,6 +833,7 @@ class EventsApi
      * @param  \FomF\Ungerboeck\Client\Model\EventsModel $data (Include in the HTTP Body) An EventsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventsPostEventRequest($data)
@@ -1106,6 +1109,7 @@ class EventsApi
      * @param  \FomF\Ungerboeck\Client\Model\EventsModel $data (Include in the HTTP Body) An EventsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventsPutEventRequest($org_code, $event_id, $data)

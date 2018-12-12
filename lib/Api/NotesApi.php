@@ -235,6 +235,7 @@ class NotesApi
      * @param  double $sequence_number The sequence number of the note. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function notesDeleteNotesRequest($org_code, $type, $code, $sequence_number)
@@ -562,6 +563,7 @@ class NotesApi
      * @param  double $sequence_number The sequence number of the note. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function notesGetNotesRequest($org_code, $type, $code, $sequence_number)
@@ -879,6 +881,7 @@ class NotesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function notesGetNotesListRequest($org_code, $search)
@@ -1159,6 +1162,7 @@ class NotesApi
      * @param  \FomF\Ungerboeck\Client\Model\NotesModel $data (Include in the HTTP Body) An NotesModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function notesPostNotesRequest($data)
@@ -1444,6 +1448,7 @@ class NotesApi
      * @param  \FomF\Ungerboeck\Client\Model\NotesModel $data (Include in the HTTP Body) An NotesModel to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function notesPutNotesRequest($org_code, $type, $code, $sequence_number, $data)

@@ -267,6 +267,7 @@ class WorkOrdersApi
      * @param  string $department The department of the work order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function workOrdersGetWorkOrdersRequest($org_code, $order, $department)
@@ -570,6 +571,7 @@ class WorkOrdersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function workOrdersGetWorkOrdersListRequest($org_code, $search)

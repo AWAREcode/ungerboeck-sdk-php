@@ -277,6 +277,7 @@ class BulletinApprovalApi
      * @param  string $bulletin_file_id The bulletin file ID of the bulletin approval. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bulletinApprovalGetBulletinApprovalRequest($org_code, $meeting_sequence_number, $bulletin_sequence_number, $sequence_number, $bulletin_file_id)
@@ -608,6 +609,7 @@ class BulletinApprovalApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bulletinApprovalGetBulletinApprovalListRequest($org_code, $search)

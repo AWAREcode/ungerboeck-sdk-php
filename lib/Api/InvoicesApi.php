@@ -267,6 +267,7 @@ class InvoicesApi
      * @param  int $invoice_number The number of the invoice. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function invoicesGetInvoicesRequest($org_code, $source, $invoice_number)
@@ -570,6 +571,7 @@ class InvoicesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function invoicesGetInvoicesListRequest($org_code, $search)
@@ -865,6 +867,7 @@ class InvoicesApi
      * @param  \FomF\Ungerboeck\Client\Model\InvoicesModel $data (Include in the HTTP Body) An InvoicesModel to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function invoicesPutNotesRequest($org_code, $source, $invoice_number, $data)

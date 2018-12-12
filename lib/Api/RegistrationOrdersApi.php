@@ -262,6 +262,7 @@ class RegistrationOrdersApi
      * @param  int $order_number The Order Number of the registration order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrdersGetRegistrationOrderRequest($org_code, $order_number)
@@ -551,6 +552,7 @@ class RegistrationOrdersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrdersGetRegistrationOrdersListRequest($org_code, $search)
@@ -831,6 +833,7 @@ class RegistrationOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\MoveOrderModel $data (Include in the HTTP Body) A MoveOrderModel entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrdersMoveOrderRequest($data)
@@ -1096,6 +1099,7 @@ class RegistrationOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\MoveOrdersBulkModel $data (Include in the HTTP Body) A MoveOrdersBulkModel entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrdersMoveOrdersBulkRequest($data)
@@ -1361,6 +1365,7 @@ class RegistrationOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel $data (Include in the HTTP Body) A RegistrationOrdersModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrdersPostRegistrationOrderRequest($data)
@@ -1636,6 +1641,7 @@ class RegistrationOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel $data (Include in the HTTP Body) A RegistrationOrdersModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrdersPutRegistrationOrderRequest($org_code, $order_number, $data)

@@ -262,6 +262,7 @@ class AffiliationsApi
      * @param  string $affiliation_code The affiliation code of the affiliation. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function affiliationsGetAffiliationRequest($org_code, $affiliation_code)
@@ -551,6 +552,7 @@ class AffiliationsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function affiliationsGetAffiliationsListRequest($org_code, $search)

@@ -272,6 +272,7 @@ class RequisitionApprovalApi
      * @param  int $sequence The sequence of the requisition approval. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function requisitionApprovalGetRequisitionApprovalRequest($org_code, $number, $line, $sequence)
@@ -589,6 +590,7 @@ class RequisitionApprovalApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function requisitionApprovalGetRequisitionApprovalListRequest($org_code, $search)

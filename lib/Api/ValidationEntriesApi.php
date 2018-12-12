@@ -267,6 +267,7 @@ class ValidationEntriesApi
      * @param  int $sequence_number The sequence number of the validation entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function validationEntriesGetValidationEntriesRequest($org_code, $validation_table_id, $sequence_number)
@@ -570,6 +571,7 @@ class ValidationEntriesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function validationEntriesGetValidationEntriesListRequest($org_code, $search)

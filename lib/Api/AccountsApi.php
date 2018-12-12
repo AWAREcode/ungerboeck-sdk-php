@@ -262,6 +262,7 @@ class AccountsApi
      * @param  string $account_code The Account Code of the account. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountsGetAccountRequest($org_code, $account_code)
@@ -551,6 +552,7 @@ class AccountsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountsGetAccountListRequest($org_code, $search)
@@ -831,6 +833,7 @@ class AccountsApi
      * @param  \FomF\Ungerboeck\Client\Model\AllAccountsModel $data (Include in the HTTP Body) An AccountsMasterModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountsPostAccountRequest($data)
@@ -1106,6 +1109,7 @@ class AccountsApi
      * @param  \FomF\Ungerboeck\Client\Model\AllAccountsModel $data (Include in the HTTP Body) An AccountsMasterModel to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountsPutAccountRequest($org_code, $account_code, $data)

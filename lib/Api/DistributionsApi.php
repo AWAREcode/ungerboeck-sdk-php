@@ -277,6 +277,7 @@ class DistributionsApi
      * @param  int $distribution_entry_seq_nbr The distribution entry sequence number of the bulletin distribution. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function distributionsGetDistributionsRequest($org_code, $bulletin_application, $meeting, $bulletin, $distribution_entry_seq_nbr)
@@ -608,6 +609,7 @@ class DistributionsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function distributionsGetDistributionsListRequest($org_code, $search)

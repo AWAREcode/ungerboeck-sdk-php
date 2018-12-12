@@ -267,6 +267,7 @@ class PaymentsApi
      * @param  int $sequence The sequence of the Payment entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentsGetPaymentRequest($org_code, $account_code, $sequence)
@@ -570,6 +571,7 @@ class PaymentsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentsGetPaymentListRequest($org_code, $search)
@@ -850,6 +852,7 @@ class PaymentsApi
      * @param  \FomF\Ungerboeck\Client\Model\PaymentsModel $data (Include in the HTTP Body) A PaymentsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentsPostPaymentRequest($data)
@@ -1130,6 +1133,7 @@ class PaymentsApi
      * @param  \FomF\Ungerboeck\Client\Model\PaymentsModel $data (Include in the HTTP Body) A PaymentsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentsPutPaymentRequest($org_code, $account_code, $sequence, $data)

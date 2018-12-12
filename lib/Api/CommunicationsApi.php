@@ -230,6 +230,7 @@ class CommunicationsApi
      * @param  int $sequence_number The Sequence Number of the communication entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function communicationsDeleteCommunicationRequest($org_code, $account_code, $sequence_number)
@@ -538,6 +539,7 @@ class CommunicationsApi
      * @param  int $sequence_number The Sequence Number of the communication entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function communicationsGetCommunicationRequest($org_code, $account_code, $sequence_number)
@@ -841,6 +843,7 @@ class CommunicationsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function communicationsGetCommunicationListRequest($org_code, $search)
@@ -1121,6 +1124,7 @@ class CommunicationsApi
      * @param  \FomF\Ungerboeck\Client\Model\CommunicationsModel $data (Include in the HTTP Body) A CommunicationsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function communicationsPostCommunicationRequest($data)
@@ -1401,6 +1405,7 @@ class CommunicationsApi
      * @param  \FomF\Ungerboeck\Client\Model\CommunicationsModel $data (Include in the HTTP Body) A CommunicationsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function communicationsPutCommunicationRequest($org_code, $account_code, $sequence_number, $data)

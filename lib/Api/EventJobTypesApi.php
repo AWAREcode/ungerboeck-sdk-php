@@ -262,6 +262,7 @@ class EventJobTypesApi
      * @param  string $code The code of the event type. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventJobTypesGetEventJobTypesRequest($org_code, $code)
@@ -551,6 +552,7 @@ class EventJobTypesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventJobTypesGetEventJobTypesListRequest($org_code, $search)

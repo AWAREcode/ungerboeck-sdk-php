@@ -272,6 +272,7 @@ class PaymentPlanDetailsApi
      * @param  int $sequence The sequence of the payment plan detail. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentPlanDetailsGetPaymentPlanDetailsRequest($org_code, $pay_plan_id, $pay_number, $sequence)
@@ -589,6 +590,7 @@ class PaymentPlanDetailsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentPlanDetailsGetPaymentPlanDetailsListRequest($org_code, $search)

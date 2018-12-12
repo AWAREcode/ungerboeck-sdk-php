@@ -262,6 +262,7 @@ class AccountsReceivableVouchersApi
      * @param  int $voucher_sequence The voucher sequence of the accounts receivable voucher. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountsReceivableVouchersGetAccountsReceivableVouchersRequest($org_code, $voucher_sequence)
@@ -551,6 +552,7 @@ class AccountsReceivableVouchersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountsReceivableVouchersGetAccountsReceivableVouchersListRequest($org_code, $search)

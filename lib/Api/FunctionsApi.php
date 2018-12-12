@@ -230,6 +230,7 @@ class FunctionsApi
      * @param  int $function_id The Function ID of the function. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function functionsDeleteFunctionRequest($org_code, $event_id, $function_id)
@@ -538,6 +539,7 @@ class FunctionsApi
      * @param  int $function_id The Function ID of the function. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function functionsGetFunctionRequest($org_code, $event_id, $function_id)
@@ -841,6 +843,7 @@ class FunctionsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function functionsGetFunctionsListRequest($org_code, $search)
@@ -1126,6 +1129,7 @@ class FunctionsApi
      * @param  \FomF\Ungerboeck\Client\Model\FunctionsModel $data (Include in the HTTP Body) A FunctionsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function functionsInsertAfterRequest($target_function_id, $data)
@@ -1410,6 +1414,7 @@ class FunctionsApi
      * @param  \FomF\Ungerboeck\Client\Model\FunctionsModel $data (Include in the HTTP Body) A FunctionsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function functionsInsertIndentedRequest($parent_function_id, $data)
@@ -1704,6 +1709,7 @@ class FunctionsApi
      * @param  \FomF\Ungerboeck\Client\Model\FunctionsModel $data (Include in the HTTP Body) An FunctionsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function functionsPutFunctionRequest($org_code, $event_id, $function_id, $data)

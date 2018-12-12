@@ -277,6 +277,7 @@ class JournalEntriesApi
      * @param  string $entry_number The entry number of the journal entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function journalEntriesGetJournalEntriesRequest($org_code, $year, $period, $source, $entry_number)
@@ -608,6 +609,7 @@ class JournalEntriesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function journalEntriesGetJournalEntriesListRequest($org_code, $search)

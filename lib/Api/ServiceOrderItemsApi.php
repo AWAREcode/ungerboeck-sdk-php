@@ -230,6 +230,7 @@ class ServiceOrderItemsApi
      * @param  int $order_line_number The Order Item Number of the Service order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrderItemsDeleteServiceOrderItemRequest($org_code, $order_number, $order_line_number)
@@ -538,6 +539,7 @@ class ServiceOrderItemsApi
      * @param  int $order_line_number The Order Item Number of the Service order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrderItemsGetServiceOrderItemRequest($org_code, $order_number, $order_line_number)
@@ -841,6 +843,7 @@ class ServiceOrderItemsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrderItemsGetServiceOrderItemsListRequest($org_code, $search)
@@ -1121,6 +1124,7 @@ class ServiceOrderItemsApi
      * @param  \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel $data (Include in the HTTP Body) A ServiceOrderItemsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrderItemsPostServiceOrderItemRequest($data)
@@ -1401,6 +1405,7 @@ class ServiceOrderItemsApi
      * @param  \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel $data (Include in the HTTP Body) A ServiceOrderItemsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrderItemsPutServiceOrderItemRequest($org_code, $order_number, $order_line_number, $data)

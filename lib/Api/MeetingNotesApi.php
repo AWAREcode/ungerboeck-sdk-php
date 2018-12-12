@@ -277,6 +277,7 @@ class MeetingNotesApi
      * @param  int $sequence_nbr The sequence number of the meeting note. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function meetingNotesGetMeetingNotesRequest($org_code, $bulletin_application, $meeting, $bulletin_seq_nbr, $sequence_nbr)
@@ -608,6 +609,7 @@ class MeetingNotesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function meetingNotesGetMeetingNotesListRequest($org_code, $search)

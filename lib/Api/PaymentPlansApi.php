@@ -262,6 +262,7 @@ class PaymentPlansApi
      * @param  int $payment_plan_id The payment plan ID of the payment plan. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentPlansGetPaymentPlansRequest($org_code, $payment_plan_id)
@@ -551,6 +552,7 @@ class PaymentPlansApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentPlansGetPaymentPlansListRequest($org_code, $search)

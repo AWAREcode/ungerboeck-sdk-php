@@ -262,6 +262,7 @@ class MeetingsApi
      * @param  int $meeting_sequence The meeting sequence of the meeting. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function meetingsGetMeetingsRequest($org_code, $meeting_sequence)
@@ -551,6 +552,7 @@ class MeetingsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function meetingsGetMeetingsListRequest($org_code, $search)

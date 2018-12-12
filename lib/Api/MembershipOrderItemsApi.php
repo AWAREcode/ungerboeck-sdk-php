@@ -230,6 +230,7 @@ class MembershipOrderItemsApi
      * @param  int $order_line_number The Order Item Number of the membership order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrderItemsDeleteMembershipOrderItemRequest($org_code, $order_number, $order_line_number)
@@ -538,6 +539,7 @@ class MembershipOrderItemsApi
      * @param  int $order_line_number The Order Item Number of the membership order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrderItemsGetMembershipOrderItemRequest($org_code, $order_number, $order_line_number)
@@ -841,6 +843,7 @@ class MembershipOrderItemsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrderItemsGetMembershipOrderItemsListRequest($org_code, $search)
@@ -1121,6 +1124,7 @@ class MembershipOrderItemsApi
      * @param  \FomF\Ungerboeck\Client\Model\MembershipOrderItemsModel $data (Include in the HTTP Body) A MembershipOrderItemsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrderItemsPostMembershipOrderItemRequest($data)
@@ -1401,6 +1405,7 @@ class MembershipOrderItemsApi
      * @param  \FomF\Ungerboeck\Client\Model\MembershipOrderItemsModel $data (Include in the HTTP Body) A MembershipOrderItemsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrderItemsPutMembershipOrderItemRequest($org_code, $order_number, $order_line_number, $data)

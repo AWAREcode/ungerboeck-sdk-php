@@ -267,6 +267,7 @@ class BookingsApi
      * @param  int $sequence_number The sequence number of the booking. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bookingsGetBookingRequest($org_code, $event, $sequence_number)
@@ -570,6 +571,7 @@ class BookingsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bookingsGetBookingsListRequest($org_code, $search)
@@ -850,6 +852,7 @@ class BookingsApi
      * @param  \FomF\Ungerboeck\Client\Model\BookingsModel $data (Include in the HTTP Body) A BookingsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bookingsPostBookingRequest($data)
@@ -1130,6 +1133,7 @@ class BookingsApi
      * @param  \FomF\Ungerboeck\Client\Model\BookingsModel $data (Include in the HTTP Body) A BookingsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bookingsPutBookingRequest($org_code, $event, $sequence_number, $data)

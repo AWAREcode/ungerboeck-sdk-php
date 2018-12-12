@@ -262,6 +262,7 @@ class RelationshipTypesApi
      * @param  string $code The code of the relationship type. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipTypesGetRelationshipTypesRequest($org_code, $code)
@@ -551,6 +552,7 @@ class RelationshipTypesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipTypesGetRelationshipTypesListRequest($org_code, $search)

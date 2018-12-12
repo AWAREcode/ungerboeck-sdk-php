@@ -230,6 +230,7 @@ class RegistrationOrderItemsApi
      * @param  int $order_line_number The Order Item Number of the registration order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrderItemsDeleteRegistrationOrderItemRequest($org_code, $order_number, $order_line_number)
@@ -538,6 +539,7 @@ class RegistrationOrderItemsApi
      * @param  int $order_line_number The Order Item Number of the registration order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrderItemsGetRegistrationOrderItemRequest($org_code, $order_number, $order_line_number)
@@ -841,6 +843,7 @@ class RegistrationOrderItemsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrderItemsGetRegistrationOrderItemsListRequest($org_code, $search)
@@ -1121,6 +1124,7 @@ class RegistrationOrderItemsApi
      * @param  \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel $data (Include in the HTTP Body) A RegistrationOrderItemsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrderItemsPostRegistrationOrderItemRequest($data)
@@ -1401,6 +1405,7 @@ class RegistrationOrderItemsApi
      * @param  \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel $data (Include in the HTTP Body) A RegistrationOrderItemsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function registrationOrderItemsPutRegistrationOrderItemRequest($org_code, $order_number, $order_line_number, $data)

@@ -262,6 +262,7 @@ class EventStatusesApi
      * @param  string $code The Code of the event status. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventStatusesGetEventStatusesRequest($org_code, $code)
@@ -551,6 +552,7 @@ class EventStatusesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventStatusesGetEventStatusesListRequest($org_code, $search)

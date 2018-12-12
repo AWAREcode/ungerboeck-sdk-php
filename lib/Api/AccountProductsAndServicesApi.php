@@ -230,6 +230,7 @@ class AccountProductsAndServicesApi
      * @param  string $product_service_code The Product/Service Code of the account product/service. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountProductsAndServicesDeleteAccountProductServiceRequest($org_code, $account_code, $product_service_code)
@@ -538,6 +539,7 @@ class AccountProductsAndServicesApi
      * @param  string $product_service_code The Product/Service Code of the account product/service. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountProductsAndServicesGetAccountProductServiceRequest($org_code, $account_code, $product_service_code)
@@ -841,6 +843,7 @@ class AccountProductsAndServicesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountProductsAndServicesGetAccountProductsAndServicesListRequest($org_code, $search)
@@ -1121,6 +1124,7 @@ class AccountProductsAndServicesApi
      * @param  \FomF\Ungerboeck\Client\Model\AccountsProductsAndServicesModel $data (Include in the HTTP Body) a AccountsProductsAndServicesModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountProductsAndServicesPostAccountProductServiceRequest($data)

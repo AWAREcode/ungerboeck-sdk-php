@@ -262,6 +262,7 @@ class AccountMailingListsApi
      * @param  int $id The ID of the account mailing list. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountMailingListsGetAccountMailingRequest($org_code, $id)
@@ -551,6 +552,7 @@ class AccountMailingListsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountMailingListsGetAccountMailingListRequest($org_code, $search)

@@ -230,6 +230,7 @@ class OpportunitiesApi
      * @param  int $occurrence The sequence number (occurrence) of the opportunity. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunitiesDeleteOpportunityRequest($org_code, $account_code, $occurrence)
@@ -533,6 +534,7 @@ class OpportunitiesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunitiesGetOpportunitiesListRequest($org_code, $search)
@@ -823,6 +825,7 @@ class OpportunitiesApi
      * @param  int $occurrence The Sequence number (occurrence) of the opportunity. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunitiesGetOpportunityRequest($org_code, $account_code, $occurrence)
@@ -1121,6 +1124,7 @@ class OpportunitiesApi
      * @param  \FomF\Ungerboeck\Client\Model\OpportunitiesModel $data (Include in the HTTP Body) an OpportunitiesModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunitiesPostOpportunityRequest($data)
@@ -1401,6 +1405,7 @@ class OpportunitiesApi
      * @param  \FomF\Ungerboeck\Client\Model\OpportunitiesModel $data (Include in the HTTP Body) An OpportunitiesModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunitiesPutOpportunityRequest($org_code, $account_code, $occurrence, $data)

@@ -262,6 +262,7 @@ class ARDemographicsApi
      * @param  string $account The account code of the AR demographic entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function aRDemographicsGetARDemographicsRequest($org_code, $account)
@@ -551,6 +552,7 @@ class ARDemographicsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function aRDemographicsGetARDemographicsListRequest($org_code, $search)

@@ -28,6 +28,8 @@
 
 namespace FomF\Ungerboeck\Client;
 
+use GuzzleHttp\Client;
+
 /**
  * Configuration Class Doc Comment
  * PHP version 5
@@ -40,6 +42,12 @@ namespace FomF\Ungerboeck\Client;
 class Configuration
 {
     private static $defaultConfiguration;
+
+    /**
+     * Timestamp of the last request for an Api Token Key
+     * @var int
+     */
+    private $requestedApiKeyTimestamp = null;
 
     /**
      * Associate array to store API key(s)
@@ -139,9 +147,11 @@ class Configuration
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
      *
      * @return string API key or token
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getApiKey($apiKeyIdentifier)
     {
+        $this->requestApiKey();
         return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
     }
 
@@ -409,6 +419,7 @@ class Configuration
      * @param  string $apiKeyIdentifier name of apikey
      *
      * @return string API key with the prefix
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getApiKeyWithPrefix($apiKeyIdentifier)
     {
@@ -426,5 +437,50 @@ class Configuration
         }
 
         return $keyWithPrefix;
+    }
+
+    /**
+    * Sets the minutes that should be passed after a new api key is requested
+    *
+    * @return $this
+    */
+    public function setRequestApiKeyInterval($minutes) {
+        $this->requestApiKeyInterval = $minutes;
+        return $this;
+    }
+
+    /**
+    * Returns the minutes of the Api Key Interval
+    *
+    * @return int
+    */
+
+    private function getRequestApiKeyInterval() {
+        return $this->requestApiKeyInterval;
+    }
+
+    /**
+    * Request Token to make API Calls
+    *
+    *
+    * @throws \GuzzleHttp\Exception\GuzzleException
+    */
+    private function requestApiKey() {
+        if (!isset($this->apiKeys['Token']) ||
+            ($this->requestedApiKeyTimestamp && (time() > $this->requestedApiKeyTimestamp + $this->getRequestApiKeyInterval() * 60))) {
+
+            $headers = [];
+            $client = new Client();
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->getUsername() . ":" . $this->getPassword());
+
+            $content = $client->request('GET',
+            $this->getHost() . '/api/v1/SDK_INITIALIZE', [
+            'debug' => $this->debug,
+            'headers' => $headers,
+            ])->getBody()->getContents();
+
+            $this->requestedApiKeyTimestamp = time();
+            $this->setApiKey('Token', str_replace('"', "", $content));
+        }
     }
 }

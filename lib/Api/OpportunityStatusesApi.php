@@ -267,6 +267,7 @@ class OpportunityStatusesApi
      * @param  string $designation The designation of the opportunity status. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunityStatusesGetOpportunityStatusRequest($org_code, $code, $designation)
@@ -570,6 +571,7 @@ class OpportunityStatusesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function opportunityStatusesGetOpportunityStatusListRequest($org_code, $search)

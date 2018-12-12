@@ -262,6 +262,7 @@ class APDemographicsApi
      * @param  string $supplier The supplier of the ap demographic. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function aPDemographicsGetAPDemographicsRequest($org_code, $supplier)
@@ -551,6 +552,7 @@ class APDemographicsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function aPDemographicsGetAPDemographicsListRequest($org_code, $search)

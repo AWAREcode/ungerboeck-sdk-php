@@ -267,6 +267,7 @@ class CampaignsApi
      * @param  string $designation The designation of the campaign. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function campaignsGetCampaignsRequest($org_code, $id, $designation)
@@ -570,6 +571,7 @@ class CampaignsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function campaignsGetCampaignsListRequest($org_code, $search)

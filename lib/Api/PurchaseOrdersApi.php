@@ -262,6 +262,7 @@ class PurchaseOrdersApi
      * @param  int $number The number of the purchase order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function purchaseOrdersGetPurchaseOrdersRequest($org_code, $number)
@@ -551,6 +552,7 @@ class PurchaseOrdersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function purchaseOrdersGetPurchaseOrdersListRequest($org_code, $search)

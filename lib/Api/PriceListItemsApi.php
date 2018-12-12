@@ -267,6 +267,7 @@ class PriceListItemsApi
      * @param  int $sequence The sequence of the price list item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function priceListItemsGetPriceListItemsRequest($org_code, $price_list, $sequence)
@@ -570,6 +571,7 @@ class PriceListItemsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function priceListItemsGetPriceListItemsListRequest($org_code, $search)

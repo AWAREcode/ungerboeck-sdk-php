@@ -262,6 +262,7 @@ class ServiceOrdersApi
      * @param  int $order_number The Order Number of the service order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersCompleteWorkOrdersRequest($org_code, $order_number)
@@ -551,6 +552,7 @@ class ServiceOrdersApi
      * @param  int $order_number The Order Number of the Service order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersGetServiceOrderRequest($org_code, $order_number)
@@ -840,6 +842,7 @@ class ServiceOrdersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersGetServiceOrdersListRequest($org_code, $search)
@@ -1120,6 +1123,7 @@ class ServiceOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\MoveOrderModel $data (Include in the HTTP Body) A MoveOrderModel entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersMoveOrderRequest($data)
@@ -1385,6 +1389,7 @@ class ServiceOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\MoveOrdersBulkModel $data (Include in the HTTP Body) A MoveOrdersBulkModel entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersMoveOrdersBulkRequest($data)
@@ -1650,6 +1655,7 @@ class ServiceOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\ServiceOrdersModel $data (Include in the HTTP Body) A ServiceOrdersModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersPostServiceOrderRequest($data)
@@ -1925,6 +1931,7 @@ class ServiceOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\ServiceOrdersModel $data (Include in the HTTP Body) A ServiceOrdersModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function serviceOrdersPutServiceOrderRequest($org_code, $order_number, $data)

@@ -230,6 +230,7 @@ class ActivitiesApi
      * @param  int $sequence_number The sequence number of the activity. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function activitiesDeleteActivityRequest($org_code, $account_code, $sequence_number)
@@ -533,6 +534,7 @@ class ActivitiesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function activitiesGetActivitiesListRequest($org_code, $search)
@@ -823,6 +825,7 @@ class ActivitiesApi
      * @param  int $sequence_number The sequence number of the activity. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function activitiesGetActivityRequest($org_code, $account_code, $sequence_number)
@@ -1121,6 +1124,7 @@ class ActivitiesApi
      * @param  \FomF\Ungerboeck\Client\Model\ActivitiesModel $data (Include in the HTTP Body) an ActivitiesModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function activitiesPostActivityRequest($data)
@@ -1401,6 +1405,7 @@ class ActivitiesApi
      * @param  \FomF\Ungerboeck\Client\Model\ActivitiesModel $data (Include in the HTTP Body) An ActivitiesModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function activitiesPutActivityRequest($org_code, $account_code, $sequence_number, $data)

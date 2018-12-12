@@ -267,6 +267,7 @@ class PurchaseOrderItemsApi
      * @param  int $item_sequence The item sequence of the purchase order item. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function purchaseOrderItemsGetPurchaseOrderItemsRequest($org_code, $number, $item_sequence)
@@ -570,6 +571,7 @@ class PurchaseOrderItemsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function purchaseOrderItemsGetPurchaseOrderItemsListRequest($org_code, $search)

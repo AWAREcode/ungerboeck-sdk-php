@@ -262,6 +262,7 @@ class EventProductsAndServicesApi
      * @param  int $sequence_number The sequence number of the event product and service. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventProductsAndServicesGetEventProductsAndServicesRequest($org_code, $sequence_number)
@@ -551,6 +552,7 @@ class EventProductsAndServicesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function eventProductsAndServicesGetEventProductsAndServicesListRequest($org_code, $search)

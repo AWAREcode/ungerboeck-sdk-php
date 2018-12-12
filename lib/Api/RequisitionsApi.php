@@ -262,6 +262,7 @@ class RequisitionsApi
      * @param  int $number The number of the requisition it is associated with. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function requisitionsGetRequisitionsRequest($org_code, $number)
@@ -551,6 +552,7 @@ class RequisitionsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function requisitionsGetRequisitionsListRequest($org_code, $search)

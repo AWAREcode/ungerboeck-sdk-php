@@ -262,6 +262,7 @@ class ResourcesApi
      * @param  int $sequence The sequence of the resource. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function resourcesGetResourcesRequest($org_code, $sequence)
@@ -551,6 +552,7 @@ class ResourcesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function resourcesGetResourcesListRequest($org_code, $search)

@@ -272,6 +272,7 @@ class AlternateAddressesApi
      * @param  string $record_type The record type of the alternate address. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function alternateAddressesGetAlternateAddressesRequest($org_code, $account, $sequence_number, $record_type)
@@ -589,6 +590,7 @@ class AlternateAddressesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function alternateAddressesGetAlternateAddressesListRequest($org_code, $search)

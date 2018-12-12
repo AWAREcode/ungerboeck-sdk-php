@@ -262,6 +262,7 @@ class MembershipOrdersApi
      * @param  int $order_number The Order Number of the membership order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrdersGetMembershipOrderRequest($org_code, $order_number)
@@ -551,6 +552,7 @@ class MembershipOrdersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrdersGetMembershipOrdersListRequest($org_code, $search)
@@ -831,6 +833,7 @@ class MembershipOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\MembershipOrdersModel $data (Include in the HTTP Body) A MembershipOrdersModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrdersPostMembershipOrderRequest($data)
@@ -1101,6 +1104,7 @@ class MembershipOrdersApi
      * @param  int $order_number The Order Number of the membership order. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrdersPrepareMembershipOrderForInvoicingRequest($org_code, $order_number)
@@ -1395,6 +1399,7 @@ class MembershipOrdersApi
      * @param  \FomF\Ungerboeck\Client\Model\MembershipOrdersModel $data (Include in the HTTP Body) A MembershipOrdersModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function membershipOrdersPutMembershipOrderRequest($org_code, $order_number, $data)

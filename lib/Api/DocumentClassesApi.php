@@ -262,6 +262,7 @@ class DocumentClassesApi
      * @param  string $class The class of the document class. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentClassesGetDocumentClassesRequest($org_code, $class)
@@ -551,6 +552,7 @@ class DocumentClassesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentClassesGetDocumentClassesListRequest($org_code, $search)

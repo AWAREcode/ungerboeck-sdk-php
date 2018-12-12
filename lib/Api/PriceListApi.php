@@ -262,6 +262,7 @@ class PriceListApi
      * @param  string $code The Code of the price list. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function priceListGetPriceListRequest($org_code, $code)
@@ -551,6 +552,7 @@ class PriceListApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function priceListGetPriceListListRequest($org_code, $search)

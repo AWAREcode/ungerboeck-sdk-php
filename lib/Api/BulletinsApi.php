@@ -272,6 +272,7 @@ class BulletinsApi
      * @param  int $bulletin The bulletin sequence number of the bulletin. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bulletinsGetBulletinsRequest($org_code, $bulletin_application, $meeting, $bulletin)
@@ -589,6 +590,7 @@ class BulletinsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function bulletinsGetBulletinsListRequest($org_code, $search)

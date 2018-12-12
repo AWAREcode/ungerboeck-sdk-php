@@ -262,6 +262,7 @@ class SpacesApi
      * @param  string $code The code of the space. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function spacesGetSpacesRequest($org_code, $code)
@@ -551,6 +552,7 @@ class SpacesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function spacesGetSpacesListRequest($org_code, $search)
@@ -831,6 +833,7 @@ class SpacesApi
      * @param  \FomF\Ungerboeck\Client\Model\SpacesModel $data (Include in the HTTP Body) A SpacesModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function spacesPostSpacesRequest($data)
@@ -1106,6 +1109,7 @@ class SpacesApi
      * @param  \FomF\Ungerboeck\Client\Model\SpacesModel $data (Include in the HTTP Body) A SpacesModel to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function spacesPutSpacesRequest($org_code, $code, $data)

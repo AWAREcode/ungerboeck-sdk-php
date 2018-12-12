@@ -267,6 +267,7 @@ class PaymentPlanHeadersApi
      * @param  int $payment_number The payment number of the payment plan header. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentPlanHeadersGetPaymentPlanHeadersRequest($org_code, $pay_plan_id, $payment_number)
@@ -570,6 +571,7 @@ class PaymentPlanHeadersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function paymentPlanHeadersGetPaymentPlanHeadersListRequest($org_code, $search)

@@ -230,6 +230,7 @@ class DocumentsApi
      * @param  int $sequence_number The sequence number of the Document entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentsDeleteDocumentRequest($org_code, $type, $sequence_number)
@@ -538,6 +539,7 @@ class DocumentsApi
      * @param  int $sequence_number The sequence number of the Document entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentsDownloadRequest($org_code, $type, $sequence_number)
@@ -846,6 +848,7 @@ class DocumentsApi
      * @param  int $sequence_number The sequence number of the Document entry. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentsGetDocumentRequest($org_code, $type, $sequence_number)
@@ -1149,6 +1152,7 @@ class DocumentsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentsGetDocumentsListRequest($org_code, $search)
@@ -1429,6 +1433,7 @@ class DocumentsApi
      * @param  \FomF\Ungerboeck\Client\Model\DocumentsModel $data (Include in the HTTP Body) A DocumentsModel entry to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentsPostDocumentRequest($data)
@@ -1709,6 +1714,7 @@ class DocumentsApi
      * @param  \FomF\Ungerboeck\Client\Model\DocumentsModel $data (Include in the HTTP Body) A DocumentsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function documentsPutDocumentRequest($org_code, $type, $sequence_number, $data)

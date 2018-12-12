@@ -230,6 +230,7 @@ class AccountAffiliationsApi
      * @param  string $affiliation_code The Affiliation Code of the account affiliation. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountAffiliationsDeleteAccountAffiliationRequest($org_code, $account_code, $affiliation_code)
@@ -538,6 +539,7 @@ class AccountAffiliationsApi
      * @param  string $affiliation_code The Affiliation Code of the account affiliation. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountAffiliationsGetAccountAffiliationRequest($org_code, $account_code, $affiliation_code)
@@ -841,6 +843,7 @@ class AccountAffiliationsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountAffiliationsGetAccountAffiliationsListRequest($org_code, $search)
@@ -1121,6 +1124,7 @@ class AccountAffiliationsApi
      * @param  \FomF\Ungerboeck\Client\Model\AccountAffiliationsModel $data (Include in the HTTP Body) an AccountAffiliationsModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function accountAffiliationsPostAccountAffiliationRequest($data)

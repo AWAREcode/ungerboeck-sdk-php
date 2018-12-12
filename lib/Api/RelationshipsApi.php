@@ -235,6 +235,7 @@ class RelationshipsApi
      * @param  string $relationship_type The type code of the relationship. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipsDeleteRelationshipRequest($org_code, $master_account_code, $subordinate_account_code, $relationship_type)
@@ -562,6 +563,7 @@ class RelationshipsApi
      * @param  string $relationship_type The type code of the relationship. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipsGetRelationshipRequest($org_code, $master_account_code, $subordinate_account_code, $relationship_type)
@@ -879,6 +881,7 @@ class RelationshipsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipsGetRelationshipsListRequest($org_code, $search)
@@ -1159,6 +1162,7 @@ class RelationshipsApi
      * @param  \FomF\Ungerboeck\Client\Model\RelationshipsModel $data (Include in the HTTP Body) an RelationshipsModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipsPostRelationshipRequest($data)
@@ -1444,6 +1448,7 @@ class RelationshipsApi
      * @param  \FomF\Ungerboeck\Client\Model\RelationshipsModel $data (Include in the HTTP Body) An RelationshipsModel entry to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function relationshipsPutRelationshipRequest($org_code, $master_account_code, $subordinate_account_code, $relationship_type, $data)

@@ -262,6 +262,7 @@ class CountriesApi
      * @param  string $code The code of the country. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function countriesGetCountriesRequest($org_code, $code)
@@ -551,6 +552,7 @@ class CountriesApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function countriesGetCountriesListRequest($org_code, $search)

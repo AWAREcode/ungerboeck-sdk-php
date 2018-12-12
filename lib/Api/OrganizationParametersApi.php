@@ -267,6 +267,7 @@ class OrganizationParametersApi
      * @param  string $parameter_code The parameter code of the organization parameter. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function organizationParametersGetOrganizationParametersRequest($org_code, $application_code, $parameter_code)
@@ -570,6 +571,7 @@ class OrganizationParametersApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function organizationParametersGetOrganizationParametersListRequest($org_code, $search)

@@ -262,6 +262,7 @@ class ExhibitorsApi
      * @param  int $exhibitor_id The Exhibitor ID of the Exhibitor. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function exhibitorsGetExhibitorRequest($org_code, $exhibitor_id)
@@ -551,6 +552,7 @@ class ExhibitorsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function exhibitorsGetExhibitorsListRequest($org_code, $search)

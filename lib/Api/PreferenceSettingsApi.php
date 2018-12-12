@@ -225,6 +225,7 @@ class PreferenceSettingsApi
      * @param  int $id The ID of the preference setting. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function preferenceSettingsDeletePreferenceSettingsRequest($org_code, $id)
@@ -514,6 +515,7 @@ class PreferenceSettingsApi
      * @param  int $id The ID of the preference setting. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function preferenceSettingsGetPreferenceSettingsRequest($org_code, $id)
@@ -803,6 +805,7 @@ class PreferenceSettingsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function preferenceSettingsGetPreferenceSettingsListRequest($org_code, $search)
@@ -1083,6 +1086,7 @@ class PreferenceSettingsApi
      * @param  \FomF\Ungerboeck\Client\Model\PreferenceSettingsModel $data (Include in the HTTP Body) An PreferenceSettingsModel to add. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function preferenceSettingsPostPreferenceSettingsRequest($data)
@@ -1358,6 +1362,7 @@ class PreferenceSettingsApi
      * @param  \FomF\Ungerboeck\Client\Model\PreferenceSettingsModel $data (Include in the HTTP Body) An PreferenceSettingsModel to edit. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function preferenceSettingsPutPreferenceSettingsRequest($org_code, $id, $data)

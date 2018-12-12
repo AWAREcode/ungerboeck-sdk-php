@@ -272,6 +272,7 @@ class MeetingFlowPatternApi
      * @param  int $flow_sequence_number The flow sequence number of the meeting flow pattern. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function meetingFlowPatternGetMeetingFlowPatternRequest($org_code, $flow_application_code, $meeting_tour_sequence_nbr, $flow_sequence_number)
@@ -589,6 +590,7 @@ class MeetingFlowPatternApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function meetingFlowPatternGetMeetingFlowPatternListRequest($org_code, $search)

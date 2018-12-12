@@ -267,6 +267,7 @@ class CustomFieldSetsApi
      * @param  string $code The code of the custom field set. (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function customFieldSetsGetCustomFieldSetsRequest($org_code, $class, $code)
@@ -570,6 +571,7 @@ class CustomFieldSetsApi
      * @param  string $search Search string using OData with model properties for the filter, Page and Page_Size to navigate (required)
      *
      * @throws \InvalidArgumentException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function customFieldSetsGetCustomFieldSetsListRequest($org_code, $search)
