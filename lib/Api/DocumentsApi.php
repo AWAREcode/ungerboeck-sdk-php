@@ -370,7 +370,7 @@ class DocumentsApi
      *
      * @throws \FomF\Ungerboeck\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return string
      */
     public function documentsDownload($org_code, $type, $sequence_number)
     {
@@ -389,11 +389,11 @@ class DocumentsApi
      *
      * @throws \FomF\Ungerboeck\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function documentsDownloadWithHttpInfo($org_code, $type, $sequence_number)
     {
-        $returnType = 'object';
+        $returnType = 'string';
         $request = $this->documentsDownloadRequest($org_code, $type, $sequence_number);
 
         try {
@@ -445,7 +445,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
