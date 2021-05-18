@@ -4,16 +4,16 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountAffiliationsDeleteAccountAffiliation**](AccountAffiliationsApi.md#accountAffiliationsDeleteAccountAffiliation) | **DELETE** /api/v1/AccountAffiliations/{OrgCode}/{AccountCode}/{AffiliationCode} | Remove an affiliation from an account
-[**accountAffiliationsGetAccountAffiliation**](AccountAffiliationsApi.md#accountAffiliationsGetAccountAffiliation) | **GET** /api/v1/AccountAffiliations/{OrgCode}/{AccountCode}/{AffiliationCode} | Get an affiliation on an account by its parameters
-[**accountAffiliationsGetAccountAffiliationsList**](AccountAffiliationsApi.md#accountAffiliationsGetAccountAffiliationsList) | **GET** /api/v1/AccountAffiliations/{OrgCode} | Search for account affiliations using OData.
-[**accountAffiliationsPostAccountAffiliation**](AccountAffiliationsApi.md#accountAffiliationsPostAccountAffiliation) | **POST** /api/v1/AccountAffiliations | Add an affiliation to an account
+[**accountAffiliationsDeleteAccountAffiliation**](AccountAffiliationsApi.md#accountAffiliationsDeleteAccountAffiliation) | **DELETE** /api/v1/AccountAffiliations/{OrgCode}/{AccountCode}/{AffiliationCode} | Standard - Remove an affiliation from an account
+[**accountAffiliationsGetAccountAffiliation**](AccountAffiliationsApi.md#accountAffiliationsGetAccountAffiliation) | **GET** /api/v1/AccountAffiliations/{OrgCode}/{AccountCode}/{AffiliationCode} | Basic - Get a single affiliation on an account by its parameters
+[**accountAffiliationsGetAccountAffiliationList**](AccountAffiliationsApi.md#accountAffiliationsGetAccountAffiliationList) | **GET** /api/v1/AccountAffiliations/{OrgCode} | Basic - Search for account affiliations using OData.
+[**accountAffiliationsPostAccountAffiliation**](AccountAffiliationsApi.md#accountAffiliationsPostAccountAffiliation) | **POST** /api/v1/AccountAffiliations | Standard - Add an affiliation to an account
 
 
 # **accountAffiliationsDeleteAccountAffiliation**
 > accountAffiliationsDeleteAccountAffiliation($org_code, $account_code, $affiliation_code)
 
-Remove an affiliation from an account
+Standard - Remove an affiliation from an account
 
 ### Example
 ```php
@@ -63,7 +63,7 @@ No authorization required
 # **accountAffiliationsGetAccountAffiliation**
 > \FomF\Ungerboeck\Client\Model\AccountAffiliationsModel accountAffiliationsGetAccountAffiliation($org_code, $account_code, $affiliation_code)
 
-Get an affiliation on an account by its parameters
+Basic - Get a single affiliation on an account by its parameters
 
 ### Example
 ```php
@@ -111,10 +111,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **accountAffiliationsGetAccountAffiliationsList**
-> \FomF\Ungerboeck\Client\Model\AccountAffiliationsModel[] accountAffiliationsGetAccountAffiliationsList($org_code, $search)
+# **accountAffiliationsGetAccountAffiliationList**
+> \FomF\Ungerboeck\Client\Model\AccountAffiliationsModel accountAffiliationsGetAccountAffiliationList($org_code, $search)
 
-Search for account affiliations using OData.
+Basic - Search for account affiliations using OData.
 
 ### Example
 ```php
@@ -127,13 +127,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\AccountAffiliationsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->accountAffiliationsGetAccountAffiliationsList($org_code, $search);
+    $result = $apiInstance->accountAffiliationsGetAccountAffiliationList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountAffiliationsApi->accountAffiliationsGetAccountAffiliationsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountAffiliationsApi->accountAffiliationsGetAccountAffiliationList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -143,11 +143,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\AccountAffiliationsModel[]**](../Model/AccountAffiliationsModel.md)
+[**\FomF\Ungerboeck\Client\Model\AccountAffiliationsModel**](../Model/AccountAffiliationsModel.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ No authorization required
 # **accountAffiliationsPostAccountAffiliation**
 > \FomF\Ungerboeck\Client\Model\AccountAffiliationsModel accountAffiliationsPostAccountAffiliation($data)
 
-Add an affiliation to an account
+Standard - Add an affiliation to an account
 
 ### Example
 ```php

@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventJobTypesGetEventJobTypes**](EventJobTypesApi.md#eventJobTypesGetEventJobTypes) | **GET** /api/v1/EventJobTypes/{OrgCode}/{Code} | Get an event types by its parameters
-[**eventJobTypesGetEventJobTypesList**](EventJobTypesApi.md#eventJobTypesGetEventJobTypesList) | **GET** /api/v1/EventJobTypes/{OrgCode} | Search for event types using OData.
+[**eventJobTypesGetEventJobType**](EventJobTypesApi.md#eventJobTypesGetEventJobType) | **GET** /api/v1/EventJobTypes/{OrgCode}/{Code} | Basic - Get a single event type by its parameters
+[**eventJobTypesGetEventJobTypeList**](EventJobTypesApi.md#eventJobTypesGetEventJobTypeList) | **GET** /api/v1/EventJobTypes/{OrgCode} | Basic - Search for event types using OData.
 
 
-# **eventJobTypesGetEventJobTypes**
-> \FomF\Ungerboeck\Client\Model\EventJobTypesModel eventJobTypesGetEventJobTypes($org_code, $code)
+# **eventJobTypesGetEventJobType**
+> \FomF\Ungerboeck\Client\Model\EventJobTypesModel eventJobTypesGetEventJobType($org_code, $code)
 
-Get an event types by its parameters
+Basic - Get a single event type by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the event t
 $code = "code_example"; // string | The code of the event type.
 
 try {
-    $result = $apiInstance->eventJobTypesGetEventJobTypes($org_code, $code);
+    $result = $apiInstance->eventJobTypesGetEventJobType($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventJobTypesApi->eventJobTypesGetEventJobTypes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventJobTypesApi->eventJobTypesGetEventJobType: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **eventJobTypesGetEventJobTypesList**
-> \FomF\Ungerboeck\Client\Model\EventJobTypesModel[] eventJobTypesGetEventJobTypesList($org_code, $search)
+# **eventJobTypesGetEventJobTypeList**
+> \FomF\Ungerboeck\Client\Model\EventJobTypesModel eventJobTypesGetEventJobTypeList($org_code, $search)
 
-Search for event types using OData.
+Basic - Search for event types using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\EventJobTypesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->eventJobTypesGetEventJobTypesList($org_code, $search);
+    $result = $apiInstance->eventJobTypesGetEventJobTypeList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventJobTypesApi->eventJobTypesGetEventJobTypesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventJobTypesApi->eventJobTypesGetEventJobTypeList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\EventJobTypesModel[]**](../Model/EventJobTypesModel.md)
+[**\FomF\Ungerboeck\Client\Model\EventJobTypesModel**](../Model/EventJobTypesModel.md)
 
 ### Authorization
 

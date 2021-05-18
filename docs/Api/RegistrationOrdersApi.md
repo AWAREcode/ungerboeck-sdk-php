@@ -4,18 +4,66 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**registrationOrdersGetRegistrationOrder**](RegistrationOrdersApi.md#registrationOrdersGetRegistrationOrder) | **GET** /api/v1/RegistrationOrders/{OrgCode}/{OrderNumber} | Get a registration order by its parameters
-[**registrationOrdersGetRegistrationOrdersList**](RegistrationOrdersApi.md#registrationOrdersGetRegistrationOrdersList) | **GET** /api/v1/RegistrationOrders/{OrgCode} | Search for registration orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
-[**registrationOrdersMoveOrder**](RegistrationOrdersApi.md#registrationOrdersMoveOrder) | **PUT** /api/v1/RegistrationOrders/MoveOrder | Use this action endpoint to move Registration Orders a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Registration Orders\&quot; window.
-[**registrationOrdersMoveOrdersBulk**](RegistrationOrdersApi.md#registrationOrdersMoveOrdersBulk) | **PUT** /api/v1/RegistrationOrders/MoveOrdersBulk | Use this action endpoint to move multiple Registration Orders to a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Registration Orders\&quot; window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
-[**registrationOrdersPostRegistrationOrder**](RegistrationOrdersApi.md#registrationOrdersPostRegistrationOrder) | **POST** /api/v1/RegistrationOrders | Add a registration order
-[**registrationOrdersPutRegistrationOrder**](RegistrationOrdersApi.md#registrationOrdersPutRegistrationOrder) | **PUT** /api/v1/RegistrationOrders/{OrgCode}/{OrderNumber} | Edit a registration order
+[**registrationOrdersCalculateTaxes**](RegistrationOrdersApi.md#registrationOrdersCalculateTaxes) | **POST** /api/v1/RegistrationOrders/CalculateTaxes | Extended (Registration Orders) - Calculate Taxes on a registration order
+[**registrationOrdersGetRegistrationOrder**](RegistrationOrdersApi.md#registrationOrdersGetRegistrationOrder) | **GET** /api/v1/RegistrationOrders/{OrgCode}/{OrderNumber} | Standard - Get a single registration order by its parameters
+[**registrationOrdersGetRegistrationOrderList**](RegistrationOrdersApi.md#registrationOrdersGetRegistrationOrderList) | **GET** /api/v1/RegistrationOrders/{OrgCode} | Standard - Search for registration orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+[**registrationOrdersMoveOrder**](RegistrationOrdersApi.md#registrationOrdersMoveOrder) | **PUT** /api/v1/RegistrationOrders/MoveOrder | Extended (Registration Orders) - Use this action endpoint to move Registration Orders a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Registration Orders\&quot; window.
+[**registrationOrdersMoveOrdersBulk**](RegistrationOrdersApi.md#registrationOrdersMoveOrdersBulk) | **PUT** /api/v1/RegistrationOrders/MoveOrdersBulk | Extended (Registration Orders) - Use this action endpoint to move multiple Registration Orders to a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Registration Orders\&quot; window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
+[**registrationOrdersPostRegistrationOrder**](RegistrationOrdersApi.md#registrationOrdersPostRegistrationOrder) | **POST** /api/v1/RegistrationOrders | Extended (Registration Orders) - Add a registration order
+[**registrationOrdersPutRegistrationOrder**](RegistrationOrdersApi.md#registrationOrdersPutRegistrationOrder) | **PUT** /api/v1/RegistrationOrders/{OrgCode}/{OrderNumber} | Extended (Registration Orders) - Edit a registration order
 
+
+# **registrationOrdersCalculateTaxes**
+> \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel registrationOrdersCalculateTaxes($data)
+
+Extended (Registration Orders) - Calculate Taxes on a registration order
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new FomF\Ungerboeck\Client\Api\RegistrationOrdersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$data = new \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel(); // \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel | (Include in the HTTP Body) A RegistrationOrdersModel entry to calculate taxes.
+
+try {
+    $result = $apiInstance->registrationOrdersCalculateTaxes($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RegistrationOrdersApi->registrationOrdersCalculateTaxes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\FomF\Ungerboeck\Client\Model\RegistrationOrdersModel**](../Model/RegistrationOrdersModel.md)| (Include in the HTTP Body) A RegistrationOrdersModel entry to calculate taxes. |
+
+### Return type
+
+[**\FomF\Ungerboeck\Client\Model\RegistrationOrdersModel**](../Model/RegistrationOrdersModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **registrationOrdersGetRegistrationOrder**
 > \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel registrationOrdersGetRegistrationOrder($org_code, $order_number)
 
-Get a registration order by its parameters
+Standard - Get a single registration order by its parameters
 
 ### Example
 ```php
@@ -61,10 +109,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **registrationOrdersGetRegistrationOrdersList**
-> \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel[] registrationOrdersGetRegistrationOrdersList($org_code, $search)
+# **registrationOrdersGetRegistrationOrderList**
+> \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel registrationOrdersGetRegistrationOrderList($org_code, $search)
 
-Search for registration orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+Standard - Search for registration orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
 
 ### Example
 ```php
@@ -77,13 +125,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\RegistrationOrdersApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->registrationOrdersGetRegistrationOrdersList($org_code, $search);
+    $result = $apiInstance->registrationOrdersGetRegistrationOrderList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RegistrationOrdersApi->registrationOrdersGetRegistrationOrdersList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RegistrationOrdersApi->registrationOrdersGetRegistrationOrderList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -93,11 +141,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\RegistrationOrdersModel[]**](../Model/RegistrationOrdersModel.md)
+[**\FomF\Ungerboeck\Client\Model\RegistrationOrdersModel**](../Model/RegistrationOrdersModel.md)
 
 ### Authorization
 
@@ -111,9 +159,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **registrationOrdersMoveOrder**
-> object registrationOrdersMoveOrder($data)
+> registrationOrdersMoveOrder($data)
 
-Use this action endpoint to move Registration Orders a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Registration Orders\" window.
+Extended (Registration Orders) - Use this action endpoint to move Registration Orders a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Registration Orders\" window.
 
 ### Example
 ```php
@@ -128,8 +176,7 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\RegistrationOrdersApi(
 $data = new \FomF\Ungerboeck\Client\Model\MoveOrderModel(); // \FomF\Ungerboeck\Client\Model\MoveOrderModel | (Include in the HTTP Body) A MoveOrderModel entry.
 
 try {
-    $result = $apiInstance->registrationOrdersMoveOrder($data);
-    print_r($result);
+    $apiInstance->registrationOrdersMoveOrder($data);
 } catch (Exception $e) {
     echo 'Exception when calling RegistrationOrdersApi->registrationOrdersMoveOrder: ', $e->getMessage(), PHP_EOL;
 }
@@ -144,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -158,9 +205,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **registrationOrdersMoveOrdersBulk**
-> \FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel[] registrationOrdersMoveOrdersBulk($data)
+> \FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel registrationOrdersMoveOrdersBulk($data)
 
-Use this action endpoint to move multiple Registration Orders to a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Registration Orders\" window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
+Extended (Registration Orders) - Use this action endpoint to move multiple Registration Orders to a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Registration Orders\" window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
 
 ### Example
 ```php
@@ -191,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel[]**](../Model/MoveOrdersBulkErrorsModel.md)
+[**\FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel**](../Model/MoveOrdersBulkErrorsModel.md)
 
 ### Authorization
 
@@ -207,7 +254,7 @@ No authorization required
 # **registrationOrdersPostRegistrationOrder**
 > \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel registrationOrdersPostRegistrationOrder($data)
 
-Add a registration order
+Extended (Registration Orders) - Add a registration order
 
 ### Example
 ```php
@@ -254,7 +301,7 @@ No authorization required
 # **registrationOrdersPutRegistrationOrder**
 > \FomF\Ungerboeck\Client\Model\RegistrationOrdersModel registrationOrdersPutRegistrationOrder($org_code, $order_number, $data)
 
-Edit a registration order
+Extended (Registration Orders) - Edit a registration order
 
 ### Example
 ```php

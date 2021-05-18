@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentPlanDetailsGetPaymentPlanDetails**](PaymentPlanDetailsApi.md#paymentPlanDetailsGetPaymentPlanDetails) | **GET** /api/v1/PaymentPlanDetails/{OrgCode}/{PayPlanID}/{PayNumber}/{Sequence} | Get a payment plan detail by its parameters
-[**paymentPlanDetailsGetPaymentPlanDetailsList**](PaymentPlanDetailsApi.md#paymentPlanDetailsGetPaymentPlanDetailsList) | **GET** /api/v1/PaymentPlanDetails/{OrgCode} | Search for payment plan details using OData.
+[**paymentPlanDetailsGetPaymentPlanDetail**](PaymentPlanDetailsApi.md#paymentPlanDetailsGetPaymentPlanDetail) | **GET** /api/v1/PaymentPlanDetails/{OrgCode}/{PayPlanID}/{PayNumber}/{Sequence} | Standard - Get a single payment plan detail by its parameters
+[**paymentPlanDetailsGetPaymentPlanDetailList**](PaymentPlanDetailsApi.md#paymentPlanDetailsGetPaymentPlanDetailList) | **GET** /api/v1/PaymentPlanDetails/{OrgCode} | Standard - Search for payment plan details using OData.
 
 
-# **paymentPlanDetailsGetPaymentPlanDetails**
-> \FomF\Ungerboeck\Client\Model\PaymentPlanDetailsModel paymentPlanDetailsGetPaymentPlanDetails($org_code, $pay_plan_id, $pay_number, $sequence)
+# **paymentPlanDetailsGetPaymentPlanDetail**
+> \FomF\Ungerboeck\Client\Model\PaymentPlanDetailsModel paymentPlanDetailsGetPaymentPlanDetail($org_code, $pay_plan_id, $pay_number, $sequence)
 
-Get a payment plan detail by its parameters
+Standard - Get a single payment plan detail by its parameters
 
 ### Example
 ```php
@@ -29,10 +29,10 @@ $pay_number = 56; // int | The step number of the payment plan step the step det
 $sequence = 56; // int | The sequence of the payment plan detail.
 
 try {
-    $result = $apiInstance->paymentPlanDetailsGetPaymentPlanDetails($org_code, $pay_plan_id, $pay_number, $sequence);
+    $result = $apiInstance->paymentPlanDetailsGetPaymentPlanDetail($org_code, $pay_plan_id, $pay_number, $sequence);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PaymentPlanDetailsApi->paymentPlanDetailsGetPaymentPlanDetails: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PaymentPlanDetailsApi->paymentPlanDetailsGetPaymentPlanDetail: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,10 +61,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **paymentPlanDetailsGetPaymentPlanDetailsList**
-> \FomF\Ungerboeck\Client\Model\PaymentPlanDetailsModel[] paymentPlanDetailsGetPaymentPlanDetailsList($org_code, $search)
+# **paymentPlanDetailsGetPaymentPlanDetailList**
+> \FomF\Ungerboeck\Client\Model\PaymentPlanDetailsModel paymentPlanDetailsGetPaymentPlanDetailList($org_code, $search)
 
-Search for payment plan details using OData.
+Standard - Search for payment plan details using OData.
 
 ### Example
 ```php
@@ -77,13 +77,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\PaymentPlanDetailsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->paymentPlanDetailsGetPaymentPlanDetailsList($org_code, $search);
+    $result = $apiInstance->paymentPlanDetailsGetPaymentPlanDetailList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PaymentPlanDetailsApi->paymentPlanDetailsGetPaymentPlanDetailsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PaymentPlanDetailsApi->paymentPlanDetailsGetPaymentPlanDetailList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\PaymentPlanDetailsModel[]**](../Model/PaymentPlanDetailsModel.md)
+[**\FomF\Ungerboeck\Client\Model\PaymentPlanDetailsModel**](../Model/PaymentPlanDetailsModel.md)
 
 ### Authorization
 

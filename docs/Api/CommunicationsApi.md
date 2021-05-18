@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**communicationsDeleteCommunication**](CommunicationsApi.md#communicationsDeleteCommunication) | **DELETE** /api/v1/Communications/{OrgCode}/{AccountCode}/{SequenceNumber} | Delete a communication entry from an account
-[**communicationsGetCommunication**](CommunicationsApi.md#communicationsGetCommunication) | **GET** /api/v1/Communications/{OrgCode}/{AccountCode}/{SequenceNumber} | Get a communication entry by its parameters
-[**communicationsGetCommunicationList**](CommunicationsApi.md#communicationsGetCommunicationList) | **GET** /api/v1/Communications/{OrgCode} | Search for account communication entries using OData.
-[**communicationsPostCommunication**](CommunicationsApi.md#communicationsPostCommunication) | **POST** /api/v1/Communications | Add a communication entry to an account
-[**communicationsPutCommunication**](CommunicationsApi.md#communicationsPutCommunication) | **PUT** /api/v1/Communications/{OrgCode}/{AccountCode}/{SequenceNumber} | Edit a communication entry
+[**communicationsDeleteCommunication**](CommunicationsApi.md#communicationsDeleteCommunication) | **DELETE** /api/v1/Communications/{OrgCode}/{AccountCode}/{SequenceNumber} | Standard - Delete a communication entry from an account
+[**communicationsGetCommunication**](CommunicationsApi.md#communicationsGetCommunication) | **GET** /api/v1/Communications/{OrgCode}/{AccountCode}/{SequenceNumber} | Basic - Get a single communication entry by its parameters
+[**communicationsGetCommunicationList**](CommunicationsApi.md#communicationsGetCommunicationList) | **GET** /api/v1/Communications/{OrgCode} | Basic - Search for account communication entries using OData.
+[**communicationsPostCommunication**](CommunicationsApi.md#communicationsPostCommunication) | **POST** /api/v1/Communications | Standard - Add a communication entry to an account
+[**communicationsPutCommunication**](CommunicationsApi.md#communicationsPutCommunication) | **PUT** /api/v1/Communications/{OrgCode}/{AccountCode}/{SequenceNumber} | Standard - Edit a communication entry
 
 
 # **communicationsDeleteCommunication**
 > communicationsDeleteCommunication($org_code, $account_code, $sequence_number)
 
-Delete a communication entry from an account
+Standard - Delete a communication entry from an account
 
 ### Example
 ```php
@@ -64,7 +64,7 @@ No authorization required
 # **communicationsGetCommunication**
 > \FomF\Ungerboeck\Client\Model\CommunicationsModel communicationsGetCommunication($org_code, $account_code, $sequence_number)
 
-Get a communication entry by its parameters
+Basic - Get a single communication entry by its parameters
 
 ### Example
 ```php
@@ -113,9 +113,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **communicationsGetCommunicationList**
-> \FomF\Ungerboeck\Client\Model\CommunicationsModel[] communicationsGetCommunicationList($org_code, $search)
+> \FomF\Ungerboeck\Client\Model\CommunicationsModel communicationsGetCommunicationList($org_code, $search)
 
-Search for account communication entries using OData.
+Basic - Search for account communication entries using OData.
 
 ### Example
 ```php
@@ -128,7 +128,7 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\CommunicationsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
     $result = $apiInstance->communicationsGetCommunicationList($org_code, $search);
@@ -144,11 +144,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\CommunicationsModel[]**](../Model/CommunicationsModel.md)
+[**\FomF\Ungerboeck\Client\Model\CommunicationsModel**](../Model/CommunicationsModel.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ No authorization required
 # **communicationsPostCommunication**
 > \FomF\Ungerboeck\Client\Model\CommunicationsModel communicationsPostCommunication($data)
 
-Add a communication entry to an account
+Standard - Add a communication entry to an account
 
 ### Example
 ```php
@@ -211,7 +211,7 @@ No authorization required
 # **communicationsPutCommunication**
 > \FomF\Ungerboeck\Client\Model\CommunicationsModel communicationsPutCommunication($org_code, $account_code, $sequence_number, $data)
 
-Edit a communication entry
+Standard - Edit a communication entry
 
 ### Example
 ```php

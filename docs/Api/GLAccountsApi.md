@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**gLAccountsGetGLAccounts**](GLAccountsApi.md#gLAccountsGetGLAccounts) | **GET** /api/v1/GLAccounts/{OrgCode}/{GLAccount}/{SubAccount} | Get a GL account by its parameters
-[**gLAccountsGetGLAccountsList**](GLAccountsApi.md#gLAccountsGetGLAccountsList) | **GET** /api/v1/GLAccounts/{OrgCode} | Search for GL accounts using OData.
+[**gLAccountsGetGLAccount**](GLAccountsApi.md#gLAccountsGetGLAccount) | **GET** /api/v1/GLAccounts/{OrgCode}/{GLAccount}/{SubAccount} | Standard - Get a GL account by its parameters
+[**gLAccountsGetGLAccountList**](GLAccountsApi.md#gLAccountsGetGLAccountList) | **GET** /api/v1/GLAccounts/{OrgCode} | Standard - Search for GL accounts using OData.
 
 
-# **gLAccountsGetGLAccounts**
-> \FomF\Ungerboeck\Client\Model\GlAccountsModel gLAccountsGetGLAccounts($org_code, $gl_account, $sub_account)
+# **gLAccountsGetGLAccount**
+> \FomF\Ungerboeck\Client\Model\GlAccountsModel gLAccountsGetGLAccount($org_code, $gl_account, $sub_account)
 
-Get a GL account by its parameters
+Standard - Get a GL account by its parameters
 
 ### Example
 ```php
@@ -25,13 +25,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\GLAccountsApi(
 );
 $org_code = "org_code_example"; // string | The organization code of the GL account.
 $gl_account = "gl_account_example"; // string | The account code of the GL account.
-$sub_account = "sub_account_example"; // string | The sub account of the GL account.
+$sub_account = "sub_account_example"; // string | The sub account of the GL account.  Note: Due to URL standards, if your sub account is blank, you will need to find it using a search.
 
 try {
-    $result = $apiInstance->gLAccountsGetGLAccounts($org_code, $gl_account, $sub_account);
+    $result = $apiInstance->gLAccountsGetGLAccount($org_code, $gl_account, $sub_account);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GLAccountsApi->gLAccountsGetGLAccounts: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GLAccountsApi->gLAccountsGetGLAccount: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code of the GL account. |
  **gl_account** | **string**| The account code of the GL account. |
- **sub_account** | **string**| The sub account of the GL account. |
+ **sub_account** | **string**| The sub account of the GL account.  Note: Due to URL standards, if your sub account is blank, you will need to find it using a search. |
 
 ### Return type
 
@@ -59,10 +59,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **gLAccountsGetGLAccountsList**
-> \FomF\Ungerboeck\Client\Model\GlAccountsModel[] gLAccountsGetGLAccountsList($org_code, $search)
+# **gLAccountsGetGLAccountList**
+> \FomF\Ungerboeck\Client\Model\GlAccountsModel gLAccountsGetGLAccountList($org_code, $search)
 
-Search for GL accounts using OData.
+Standard - Search for GL accounts using OData.
 
 ### Example
 ```php
@@ -75,13 +75,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\GLAccountsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->gLAccountsGetGLAccountsList($org_code, $search);
+    $result = $apiInstance->gLAccountsGetGLAccountList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GLAccountsApi->gLAccountsGetGLAccountsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GLAccountsApi->gLAccountsGetGLAccountList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\GlAccountsModel[]**](../Model/GlAccountsModel.md)
+[**\FomF\Ungerboeck\Client\Model\GlAccountsModel**](../Model/GlAccountsModel.md)
 
 ### Authorization
 

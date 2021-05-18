@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**relationshipsDeleteRelationship**](RelationshipsApi.md#relationshipsDeleteRelationship) | **DELETE** /api/v1/Relationships/{OrgCode}/{MasterAccountCode}/{SubordinateAccountCode}/{RelationshipType} | Delete a relationship between two accounts
-[**relationshipsGetRelationship**](RelationshipsApi.md#relationshipsGetRelationship) | **GET** /api/v1/Relationships/{OrgCode}/{MasterAccountCode}/{SubordinateAccountCode}/{RelationshipType} | Get a relationship entry connecting two accounts by its parameters
-[**relationshipsGetRelationshipsList**](RelationshipsApi.md#relationshipsGetRelationshipsList) | **GET** /api/v1/Relationships/{OrgCode} | Search for account relationships using OData.
-[**relationshipsPostRelationship**](RelationshipsApi.md#relationshipsPostRelationship) | **POST** /api/v1/Relationships | Add a relationship to tie two accounts together
-[**relationshipsPutRelationship**](RelationshipsApi.md#relationshipsPutRelationship) | **PUT** /api/v1/Relationships/{OrgCode}/{MasterAccountCode}/{SubordinateAccountCode}/{RelationshipType} | Edit a relationship between two accounts
+[**relationshipsDeleteRelationship**](RelationshipsApi.md#relationshipsDeleteRelationship) | **DELETE** /api/v1/Relationships/{OrgCode}/{MasterAccountCode}/{SubordinateAccountCode}/{RelationshipType} | Standard - Delete a relationship between two accounts
+[**relationshipsGetRelationship**](RelationshipsApi.md#relationshipsGetRelationship) | **GET** /api/v1/Relationships/{OrgCode}/{MasterAccountCode}/{SubordinateAccountCode}/{RelationshipType} | Basic - Get a single relationship entry connecting two accounts by its parameters
+[**relationshipsGetRelationshipList**](RelationshipsApi.md#relationshipsGetRelationshipList) | **GET** /api/v1/Relationships/{OrgCode} | Basic - Search for account relationships using OData.
+[**relationshipsPostRelationship**](RelationshipsApi.md#relationshipsPostRelationship) | **POST** /api/v1/Relationships | Standard - Add a relationship to tie two accounts together
+[**relationshipsPutRelationship**](RelationshipsApi.md#relationshipsPutRelationship) | **PUT** /api/v1/Relationships/{OrgCode}/{MasterAccountCode}/{SubordinateAccountCode}/{RelationshipType} | Standard - Edit a relationship between two accounts
 
 
 # **relationshipsDeleteRelationship**
 > relationshipsDeleteRelationship($org_code, $master_account_code, $subordinate_account_code, $relationship_type)
 
-Delete a relationship between two accounts
+Standard - Delete a relationship between two accounts
 
 ### Example
 ```php
@@ -66,7 +66,7 @@ No authorization required
 # **relationshipsGetRelationship**
 > \FomF\Ungerboeck\Client\Model\RelationshipsModel relationshipsGetRelationship($org_code, $master_account_code, $subordinate_account_code, $relationship_type)
 
-Get a relationship entry connecting two accounts by its parameters
+Basic - Get a single relationship entry connecting two accounts by its parameters
 
 ### Example
 ```php
@@ -116,10 +116,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **relationshipsGetRelationshipsList**
-> \FomF\Ungerboeck\Client\Model\RelationshipsModel[] relationshipsGetRelationshipsList($org_code, $search)
+# **relationshipsGetRelationshipList**
+> \FomF\Ungerboeck\Client\Model\RelationshipsModel relationshipsGetRelationshipList($org_code, $search)
 
-Search for account relationships using OData.
+Basic - Search for account relationships using OData.
 
 ### Example
 ```php
@@ -132,13 +132,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\RelationshipsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->relationshipsGetRelationshipsList($org_code, $search);
+    $result = $apiInstance->relationshipsGetRelationshipList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RelationshipsApi->relationshipsGetRelationshipsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RelationshipsApi->relationshipsGetRelationshipList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -148,11 +148,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\RelationshipsModel[]**](../Model/RelationshipsModel.md)
+[**\FomF\Ungerboeck\Client\Model\RelationshipsModel**](../Model/RelationshipsModel.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ No authorization required
 # **relationshipsPostRelationship**
 > \FomF\Ungerboeck\Client\Model\RelationshipsModel relationshipsPostRelationship($data)
 
-Add a relationship to tie two accounts together
+Standard - Add a relationship to tie two accounts together
 
 ### Example
 ```php
@@ -215,7 +215,7 @@ No authorization required
 # **relationshipsPutRelationship**
 > \FomF\Ungerboeck\Client\Model\RelationshipsModel relationshipsPutRelationship($org_code, $master_account_code, $subordinate_account_code, $relationship_type, $data)
 
-Edit a relationship between two accounts
+Standard - Edit a relationship between two accounts
 
 ### Example
 ```php

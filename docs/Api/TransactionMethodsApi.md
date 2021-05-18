@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**transactionMethodsGetTransactionMethods**](TransactionMethodsApi.md#transactionMethodsGetTransactionMethods) | **GET** /api/v1/TransactionMethods/{OrgCode}/{Code} | Get a transaction method by its parameters
-[**transactionMethodsGetTransactionMethodsList**](TransactionMethodsApi.md#transactionMethodsGetTransactionMethodsList) | **GET** /api/v1/TransactionMethods/{OrgCode} | Search for transaction methods using OData.
+[**transactionMethodsGetTransactionMethod**](TransactionMethodsApi.md#transactionMethodsGetTransactionMethod) | **GET** /api/v1/TransactionMethods/{OrgCode}/{Code} | Standard - Get a single transaction method by its parameters
+[**transactionMethodsGetTransactionMethodList**](TransactionMethodsApi.md#transactionMethodsGetTransactionMethodList) | **GET** /api/v1/TransactionMethods/{OrgCode} | Standard - Search for transaction methods using OData.
 
 
-# **transactionMethodsGetTransactionMethods**
-> \FomF\Ungerboeck\Client\Model\TransactionMethodsModel transactionMethodsGetTransactionMethods($org_code, $code)
+# **transactionMethodsGetTransactionMethod**
+> \FomF\Ungerboeck\Client\Model\TransactionMethodsModel transactionMethodsGetTransactionMethod($org_code, $code)
 
-Get a transaction method by its parameters
+Standard - Get a single transaction method by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the transac
 $code = "code_example"; // string | The code of the transaction method.
 
 try {
-    $result = $apiInstance->transactionMethodsGetTransactionMethods($org_code, $code);
+    $result = $apiInstance->transactionMethodsGetTransactionMethod($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMethodsApi->transactionMethodsGetTransactionMethods: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMethodsApi->transactionMethodsGetTransactionMethod: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionMethodsGetTransactionMethodsList**
-> \FomF\Ungerboeck\Client\Model\TransactionMethodsModel[] transactionMethodsGetTransactionMethodsList($org_code, $search)
+# **transactionMethodsGetTransactionMethodList**
+> \FomF\Ungerboeck\Client\Model\TransactionMethodsModel transactionMethodsGetTransactionMethodList($org_code, $search)
 
-Search for transaction methods using OData.
+Standard - Search for transaction methods using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\TransactionMethodsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->transactionMethodsGetTransactionMethodsList($org_code, $search);
+    $result = $apiInstance->transactionMethodsGetTransactionMethodList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionMethodsApi->transactionMethodsGetTransactionMethodsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionMethodsApi->transactionMethodsGetTransactionMethodList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\TransactionMethodsModel[]**](../Model/TransactionMethodsModel.md)
+[**\FomF\Ungerboeck\Client\Model\TransactionMethodsModel**](../Model/TransactionMethodsModel.md)
 
 ### Authorization
 

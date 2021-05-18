@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aPDemographicsGetAPDemographics**](APDemographicsApi.md#aPDemographicsGetAPDemographics) | **GET** /api/v1/APDemographics/{OrgCode}/{Supplier} | Get a ap demographic by its parameters
-[**aPDemographicsGetAPDemographicsList**](APDemographicsApi.md#aPDemographicsGetAPDemographicsList) | **GET** /api/v1/APDemographics/{OrgCode} | Search for ap demographic using OData.
+[**aPDemographicsGetAPDemographic**](APDemographicsApi.md#aPDemographicsGetAPDemographic) | **GET** /api/v1/APDemographics/{OrgCode}/{Supplier} | Standard - Get a single ap demographic by its parameters
+[**aPDemographicsGetAPDemographicList**](APDemographicsApi.md#aPDemographicsGetAPDemographicList) | **GET** /api/v1/APDemographics/{OrgCode} | Standard - Search for ap demographic using OData.
 
 
-# **aPDemographicsGetAPDemographics**
-> \FomF\Ungerboeck\Client\Model\APDemographicsModel aPDemographicsGetAPDemographics($org_code, $supplier)
+# **aPDemographicsGetAPDemographic**
+> \FomF\Ungerboeck\Client\Model\APDemographicsModel aPDemographicsGetAPDemographic($org_code, $supplier)
 
-Get a ap demographic by its parameters
+Standard - Get a single ap demographic by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the ap demo
 $supplier = "supplier_example"; // string | The supplier of the ap demographic.
 
 try {
-    $result = $apiInstance->aPDemographicsGetAPDemographics($org_code, $supplier);
+    $result = $apiInstance->aPDemographicsGetAPDemographic($org_code, $supplier);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling APDemographicsApi->aPDemographicsGetAPDemographics: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling APDemographicsApi->aPDemographicsGetAPDemographic: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **aPDemographicsGetAPDemographicsList**
-> \FomF\Ungerboeck\Client\Model\APDemographicsModel[] aPDemographicsGetAPDemographicsList($org_code, $search)
+# **aPDemographicsGetAPDemographicList**
+> \FomF\Ungerboeck\Client\Model\APDemographicsModel aPDemographicsGetAPDemographicList($org_code, $search)
 
-Search for ap demographic using OData.
+Standard - Search for ap demographic using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\APDemographicsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->aPDemographicsGetAPDemographicsList($org_code, $search);
+    $result = $apiInstance->aPDemographicsGetAPDemographicList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling APDemographicsApi->aPDemographicsGetAPDemographicsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling APDemographicsApi->aPDemographicsGetAPDemographicList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\APDemographicsModel[]**](../Model/APDemographicsModel.md)
+[**\FomF\Ungerboeck\Client\Model\APDemographicsModel**](../Model/APDemographicsModel.md)
 
 ### Authorization
 

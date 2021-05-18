@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**opportunitiesDeleteOpportunity**](OpportunitiesApi.md#opportunitiesDeleteOpportunity) | **DELETE** /api/v1/Opportunities/{OrgCode}/{AccountCode}/{Occurrence} | Delete an opportunity
-[**opportunitiesGetOpportunitiesList**](OpportunitiesApi.md#opportunitiesGetOpportunitiesList) | **GET** /api/v1/Opportunities/{OrgCode} | Search for opportunities using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
-[**opportunitiesGetOpportunity**](OpportunitiesApi.md#opportunitiesGetOpportunity) | **GET** /api/v1/Opportunities/{OrgCode}/{AccountCode}/{Occurrence} | Get a opportunity by its parameters
-[**opportunitiesPostOpportunity**](OpportunitiesApi.md#opportunitiesPostOpportunity) | **POST** /api/v1/Opportunities | Add a opportunity
-[**opportunitiesPutOpportunity**](OpportunitiesApi.md#opportunitiesPutOpportunity) | **PUT** /api/v1/Opportunities/{OrgCode}/{AccountCode}/{Occurrence} | Edit an opportunity
+[**opportunitiesDeleteOpportunity**](OpportunitiesApi.md#opportunitiesDeleteOpportunity) | **DELETE** /api/v1/Opportunities/{OrgCode}/{AccountCode}/{Occurrence} | Standard - Delete an opportunity
+[**opportunitiesGetOpportunity**](OpportunitiesApi.md#opportunitiesGetOpportunity) | **GET** /api/v1/Opportunities/{OrgCode}/{AccountCode}/{Occurrence} | Basic - Get a single opportunity by its parameters
+[**opportunitiesGetOpportunityList**](OpportunitiesApi.md#opportunitiesGetOpportunityList) | **GET** /api/v1/Opportunities/{OrgCode} | Basic - Search for opportunities using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+[**opportunitiesPostOpportunity**](OpportunitiesApi.md#opportunitiesPostOpportunity) | **POST** /api/v1/Opportunities | Standard - Add a opportunity
+[**opportunitiesPutOpportunity**](OpportunitiesApi.md#opportunitiesPutOpportunity) | **PUT** /api/v1/Opportunities/{OrgCode}/{AccountCode}/{Occurrence} | Standard - Edit an opportunity
 
 
 # **opportunitiesDeleteOpportunity**
 > opportunitiesDeleteOpportunity($org_code, $account_code, $occurrence)
 
-Delete an opportunity
+Standard - Delete an opportunity
 
 ### Example
 ```php
@@ -61,59 +61,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **opportunitiesGetOpportunitiesList**
-> \FomF\Ungerboeck\Client\Model\OpportunitiesModel[] opportunitiesGetOpportunitiesList($org_code, $search)
-
-Search for opportunities using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new FomF\Ungerboeck\Client\Api\OpportunitiesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
-
-try {
-    $result = $apiInstance->opportunitiesGetOpportunitiesList($org_code, $search);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OpportunitiesApi->opportunitiesGetOpportunitiesList: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
-
-### Return type
-
-[**\FomF\Ungerboeck\Client\Model\OpportunitiesModel[]**](../Model/OpportunitiesModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **opportunitiesGetOpportunity**
 > \FomF\Ungerboeck\Client\Model\OpportunitiesModel opportunitiesGetOpportunity($org_code, $account_code, $occurrence)
 
-Get a opportunity by its parameters
+Basic - Get a single opportunity by its parameters
 
 ### Example
 ```php
@@ -161,10 +112,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **opportunitiesGetOpportunityList**
+> \FomF\Ungerboeck\Client\Model\OpportunitiesModel opportunitiesGetOpportunityList($org_code, $search)
+
+Basic - Search for opportunities using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new FomF\Ungerboeck\Client\Api\OpportunitiesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$org_code = "org_code_example"; // string | The organization code in which the search will take place
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
+
+try {
+    $result = $apiInstance->opportunitiesGetOpportunityList($org_code, $search);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OpportunitiesApi->opportunitiesGetOpportunityList: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_code** | **string**| The organization code in which the search will take place |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
+
+### Return type
+
+[**\FomF\Ungerboeck\Client\Model\OpportunitiesModel**](../Model/OpportunitiesModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **opportunitiesPostOpportunity**
 > \FomF\Ungerboeck\Client\Model\OpportunitiesModel opportunitiesPostOpportunity($data)
 
-Add a opportunity
+Standard - Add a opportunity
 
 ### Example
 ```php
@@ -211,7 +211,7 @@ No authorization required
 # **opportunitiesPutOpportunity**
 > \FomF\Ungerboeck\Client\Model\OpportunitiesModel opportunitiesPutOpportunity($org_code, $account_code, $occurrence, $data)
 
-Edit an opportunity
+Standard - Edit an opportunity
 
 ### Example
 ```php

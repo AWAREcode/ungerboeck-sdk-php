@@ -4,14 +4,16 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**journalEntryDetailsGetJournalEntryDetails**](JournalEntryDetailsApi.md#journalEntryDetailsGetJournalEntryDetails) | **GET** /api/v1/JournalEntryDetails/{OrgCode}/{Year}/{Period}/{Source}/{EntryNumber}/{Line} | Get an journal entry detail by its parameters
-[**journalEntryDetailsGetJournalEntryDetailsList**](JournalEntryDetailsApi.md#journalEntryDetailsGetJournalEntryDetailsList) | **GET** /api/v1/JournalEntryDetails/{OrgCode} | Search for journal entry detail using OData.
+[**journalEntryDetailsGetJournalEntryDetail**](JournalEntryDetailsApi.md#journalEntryDetailsGetJournalEntryDetail) | **GET** /api/v1/JournalEntryDetails/{OrgCode}/{Year}/{Period}/{Source}/{EntryNumber}/{Line} | Standard - Get a single journal entry detail by its parameters
+[**journalEntryDetailsGetJournalEntryDetailList**](JournalEntryDetailsApi.md#journalEntryDetailsGetJournalEntryDetailList) | **GET** /api/v1/JournalEntryDetails/{OrgCode} | Standard - Search for journal entry detail using OData.
+[**journalEntryDetailsPostJournalEntryDetail**](JournalEntryDetailsApi.md#journalEntryDetailsPostJournalEntryDetail) | **POST** /api/v1/JournalEntryDetails | Extended (Journal Entries) - Add a Journal Entry item
+[**journalEntryDetailsPutJournalEntryDetail**](JournalEntryDetailsApi.md#journalEntryDetailsPutJournalEntryDetail) | **PUT** /api/v1/JournalEntryDetails/{OrgCode}/{Year}/{Period}/{Source}/{EntryNumber}/{Line} | Extended (Journal Entries) - Edit a Journal Entry item
 
 
-# **journalEntryDetailsGetJournalEntryDetails**
-> \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel journalEntryDetailsGetJournalEntryDetails($org_code, $year, $period, $source, $entry_number, $line)
+# **journalEntryDetailsGetJournalEntryDetail**
+> \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel journalEntryDetailsGetJournalEntryDetail($org_code, $year, $period, $source, $entry_number, $line)
 
-Get an journal entry detail by its parameters
+Standard - Get a single journal entry detail by its parameters
 
 ### Example
 ```php
@@ -31,10 +33,10 @@ $entry_number = "entry_number_example"; // string | The entry number of the jour
 $line = 56; // int | The line (sequence) of the journal entry detail.
 
 try {
-    $result = $apiInstance->journalEntryDetailsGetJournalEntryDetails($org_code, $year, $period, $source, $entry_number, $line);
+    $result = $apiInstance->journalEntryDetailsGetJournalEntryDetail($org_code, $year, $period, $source, $entry_number, $line);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JournalEntryDetailsApi->journalEntryDetailsGetJournalEntryDetails: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JournalEntryDetailsApi->journalEntryDetailsGetJournalEntryDetail: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -65,10 +67,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **journalEntryDetailsGetJournalEntryDetailsList**
-> \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel[] journalEntryDetailsGetJournalEntryDetailsList($org_code, $search)
+# **journalEntryDetailsGetJournalEntryDetailList**
+> \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel journalEntryDetailsGetJournalEntryDetailList($org_code, $search)
 
-Search for journal entry detail using OData.
+Standard - Search for journal entry detail using OData.
 
 ### Example
 ```php
@@ -81,13 +83,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\JournalEntryDetailsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->journalEntryDetailsGetJournalEntryDetailsList($org_code, $search);
+    $result = $apiInstance->journalEntryDetailsGetJournalEntryDetailList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JournalEntryDetailsApi->journalEntryDetailsGetJournalEntryDetailsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JournalEntryDetailsApi->journalEntryDetailsGetJournalEntryDetailList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -97,11 +99,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel[]**](../Model/JournalEntryDetailsModel.md)
+[**\FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel**](../Model/JournalEntryDetailsModel.md)
 
 ### Authorization
 
@@ -110,6 +112,112 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **journalEntryDetailsPostJournalEntryDetail**
+> \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel journalEntryDetailsPostJournalEntryDetail($data)
+
+Extended (Journal Entries) - Add a Journal Entry item
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new FomF\Ungerboeck\Client\Api\JournalEntryDetailsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$data = new \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel(); // \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel | (Include in the HTTP Body) A JournalEntryDetailsModel entry to edit.
+
+try {
+    $result = $apiInstance->journalEntryDetailsPostJournalEntryDetail($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling JournalEntryDetailsApi->journalEntryDetailsPostJournalEntryDetail: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel**](../Model/JournalEntryDetailsModel.md)| (Include in the HTTP Body) A JournalEntryDetailsModel entry to edit. |
+
+### Return type
+
+[**\FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel**](../Model/JournalEntryDetailsModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **journalEntryDetailsPutJournalEntryDetail**
+> \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel journalEntryDetailsPutJournalEntryDetail($org_code, $year, $period, $source, $entry_number, $line, $data)
+
+Extended (Journal Entries) - Edit a Journal Entry item
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new FomF\Ungerboeck\Client\Api\JournalEntryDetailsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$org_code = "org_code_example"; // string | 
+$year = 56; // int | 
+$period = 56; // int | 
+$source = "source_example"; // string | 
+$entry_number = "entry_number_example"; // string | 
+$line = 56; // int | 
+$data = new \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel(); // \FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel | (Include in the HTTP Body) A JournalEntryDetailsModel entry to edit.
+
+try {
+    $result = $apiInstance->journalEntryDetailsPutJournalEntryDetail($org_code, $year, $period, $source, $entry_number, $line, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling JournalEntryDetailsApi->journalEntryDetailsPutJournalEntryDetail: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_code** | **string**|  |
+ **year** | **int**|  |
+ **period** | **int**|  |
+ **source** | **string**|  |
+ **entry_number** | **string**|  |
+ **line** | **int**|  |
+ **data** | [**\FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel**](../Model/JournalEntryDetailsModel.md)| (Include in the HTTP Body) A JournalEntryDetailsModel entry to edit. |
+
+### Return type
+
+[**\FomF\Ungerboeck\Client\Model\JournalEntryDetailsModel**](../Model/JournalEntryDetailsModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

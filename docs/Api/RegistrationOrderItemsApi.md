@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**registrationOrderItemsDeleteRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsDeleteRegistrationOrderItem) | **DELETE** /api/v1/RegistrationOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Delete a order item from an order
-[**registrationOrderItemsGetRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsGetRegistrationOrderItem) | **GET** /api/v1/RegistrationOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Get a registration order item by its parameters
-[**registrationOrderItemsGetRegistrationOrderItemsList**](RegistrationOrderItemsApi.md#registrationOrderItemsGetRegistrationOrderItemsList) | **GET** /api/v1/RegistrationOrderItems/{OrgCode} | Search for registration order items using OData.
-[**registrationOrderItemsPostRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsPostRegistrationOrderItem) | **POST** /api/v1/RegistrationOrderItems | Add an item to an existing registration order
-[**registrationOrderItemsPutRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsPutRegistrationOrderItem) | **PUT** /api/v1/RegistrationOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Edit a item on a registration order
+[**registrationOrderItemsDeleteRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsDeleteRegistrationOrderItem) | **DELETE** /api/v1/RegistrationOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Extended (Registration Orders) - Delete a order item from an order
+[**registrationOrderItemsGetRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsGetRegistrationOrderItem) | **GET** /api/v1/RegistrationOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Standard - Get a single registration order item by its parameters
+[**registrationOrderItemsGetRegistrationOrderItemList**](RegistrationOrderItemsApi.md#registrationOrderItemsGetRegistrationOrderItemList) | **GET** /api/v1/RegistrationOrderItems/{OrgCode} | Standard - Search for registration order items using OData.
+[**registrationOrderItemsPostRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsPostRegistrationOrderItem) | **POST** /api/v1/RegistrationOrderItems | Extended (Registration Orders) - Add an item to an existing registration order
+[**registrationOrderItemsPutRegistrationOrderItem**](RegistrationOrderItemsApi.md#registrationOrderItemsPutRegistrationOrderItem) | **PUT** /api/v1/RegistrationOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Extended (Registration Orders) - Edit a item on a registration order
 
 
 # **registrationOrderItemsDeleteRegistrationOrderItem**
 > registrationOrderItemsDeleteRegistrationOrderItem($org_code, $order_number, $order_line_number)
 
-Delete a order item from an order
+Extended (Registration Orders) - Delete a order item from an order
 
 ### Example
 ```php
@@ -64,7 +64,7 @@ No authorization required
 # **registrationOrderItemsGetRegistrationOrderItem**
 > \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel registrationOrderItemsGetRegistrationOrderItem($org_code, $order_number, $order_line_number)
 
-Get a registration order item by its parameters
+Standard - Get a single registration order item by its parameters
 
 ### Example
 ```php
@@ -112,10 +112,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **registrationOrderItemsGetRegistrationOrderItemsList**
-> \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel[] registrationOrderItemsGetRegistrationOrderItemsList($org_code, $search)
+# **registrationOrderItemsGetRegistrationOrderItemList**
+> \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel registrationOrderItemsGetRegistrationOrderItemList($org_code, $search)
 
-Search for registration order items using OData.
+Standard - Search for registration order items using OData.
 
 ### Example
 ```php
@@ -128,13 +128,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\RegistrationOrderItemsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->registrationOrderItemsGetRegistrationOrderItemsList($org_code, $search);
+    $result = $apiInstance->registrationOrderItemsGetRegistrationOrderItemList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RegistrationOrderItemsApi->registrationOrderItemsGetRegistrationOrderItemsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RegistrationOrderItemsApi->registrationOrderItemsGetRegistrationOrderItemList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -144,11 +144,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel[]**](../Model/RegistrationOrderItemsModel.md)
+[**\FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel**](../Model/RegistrationOrderItemsModel.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ No authorization required
 # **registrationOrderItemsPostRegistrationOrderItem**
 > \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel registrationOrderItemsPostRegistrationOrderItem($data)
 
-Add an item to an existing registration order
+Extended (Registration Orders) - Add an item to an existing registration order
 
 ### Example
 ```php
@@ -211,7 +211,7 @@ No authorization required
 # **registrationOrderItemsPutRegistrationOrderItem**
 > \FomF\Ungerboeck\Client\Model\RegistrationOrderItemsModel registrationOrderItemsPutRegistrationOrderItem($org_code, $order_number, $order_line_number, $data)
 
-Edit a item on a registration order
+Extended (Registration Orders) - Edit a item on a registration order
 
 ### Example
 ```php

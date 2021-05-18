@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**affiliationsGetAffiliation**](AffiliationsApi.md#affiliationsGetAffiliation) | **GET** /api/v1/Affiliations/{OrgCode}/{AffiliationCode} | Get an affiliation by its parameters
-[**affiliationsGetAffiliationsList**](AffiliationsApi.md#affiliationsGetAffiliationsList) | **GET** /api/v1/Affiliations/{OrgCode} | Search for affiliations using OData.
+[**affiliationsGetAffiliation**](AffiliationsApi.md#affiliationsGetAffiliation) | **GET** /api/v1/Affiliations/{OrgCode}/{AffiliationCode} | Basic - Get a single affiliation by its parameters
+[**affiliationsGetAffiliationList**](AffiliationsApi.md#affiliationsGetAffiliationList) | **GET** /api/v1/Affiliations/{OrgCode} | Basic - Search for affiliations using OData.
 
 
 # **affiliationsGetAffiliation**
 > \FomF\Ungerboeck\Client\Model\AffiliationsModel affiliationsGetAffiliation($org_code, $affiliation_code)
 
-Get an affiliation by its parameters
+Basic - Get a single affiliation by its parameters
 
 ### Example
 ```php
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **affiliationsGetAffiliationsList**
-> \FomF\Ungerboeck\Client\Model\AffiliationsModel[] affiliationsGetAffiliationsList($org_code, $search)
+# **affiliationsGetAffiliationList**
+> \FomF\Ungerboeck\Client\Model\AffiliationsModel affiliationsGetAffiliationList($org_code, $search)
 
-Search for affiliations using OData.
+Basic - Search for affiliations using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\AffiliationsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->affiliationsGetAffiliationsList($org_code, $search);
+    $result = $apiInstance->affiliationsGetAffiliationList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AffiliationsApi->affiliationsGetAffiliationsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AffiliationsApi->affiliationsGetAffiliationList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\AffiliationsModel[]**](../Model/AffiliationsModel.md)
+[**\FomF\Ungerboeck\Client\Model\AffiliationsModel**](../Model/AffiliationsModel.md)
 
 ### Authorization
 

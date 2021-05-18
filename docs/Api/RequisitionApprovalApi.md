@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**requisitionApprovalGetRequisitionApproval**](RequisitionApprovalApi.md#requisitionApprovalGetRequisitionApproval) | **GET** /api/v1/RequisitionApproval/{OrgCode}/{Number}/{Line}/{Sequence} | Get a requisition approval by its parameters
-[**requisitionApprovalGetRequisitionApprovalList**](RequisitionApprovalApi.md#requisitionApprovalGetRequisitionApprovalList) | **GET** /api/v1/RequisitionApproval/{OrgCode} | Search for requisition approval using OData.
+[**requisitionApprovalGetRequisitionApproval**](RequisitionApprovalApi.md#requisitionApprovalGetRequisitionApproval) | **GET** /api/v1/RequisitionApproval/{OrgCode}/{Number}/{Line}/{Sequence} | Standard - Get a single requisition approval by its parameters
+[**requisitionApprovalGetRequisitionApprovalList**](RequisitionApprovalApi.md#requisitionApprovalGetRequisitionApprovalList) | **GET** /api/v1/RequisitionApproval/{OrgCode} | Standard - Search for requisition approval using OData.
 
 
 # **requisitionApprovalGetRequisitionApproval**
 > \FomF\Ungerboeck\Client\Model\RequisitionApprovalModel requisitionApprovalGetRequisitionApproval($org_code, $number, $line, $sequence)
 
-Get a requisition approval by its parameters
+Standard - Get a single requisition approval by its parameters
 
 ### Example
 ```php
@@ -62,9 +62,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **requisitionApprovalGetRequisitionApprovalList**
-> \FomF\Ungerboeck\Client\Model\RequisitionApprovalModel[] requisitionApprovalGetRequisitionApprovalList($org_code, $search)
+> \FomF\Ungerboeck\Client\Model\RequisitionApprovalModel requisitionApprovalGetRequisitionApprovalList($org_code, $search)
 
-Search for requisition approval using OData.
+Standard - Search for requisition approval using OData.
 
 ### Example
 ```php
@@ -77,7 +77,7 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\RequisitionApprovalApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
     $result = $apiInstance->requisitionApprovalGetRequisitionApprovalList($org_code, $search);
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\RequisitionApprovalModel[]**](../Model/RequisitionApprovalModel.md)
+[**\FomF\Ungerboeck\Client\Model\RequisitionApprovalModel**](../Model/RequisitionApprovalModel.md)
 
 ### Authorization
 

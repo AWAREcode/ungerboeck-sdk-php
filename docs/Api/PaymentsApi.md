@@ -4,16 +4,16 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentsGetPayment**](PaymentsApi.md#paymentsGetPayment) | **GET** /api/v1/Payments/{OrgCode}/{AccountCode}/{Sequence} | Get a Payment entry by its parameters
-[**paymentsGetPaymentList**](PaymentsApi.md#paymentsGetPaymentList) | **GET** /api/v1/Payments/{OrgCode} | Search for payments using OData.
-[**paymentsPostPayment**](PaymentsApi.md#paymentsPostPayment) | **POST** /api/v1/Payments | Add a Payment entry to an account
-[**paymentsPutPayment**](PaymentsApi.md#paymentsPutPayment) | **PUT** /api/v1/Payments/{OrgCode}/{AccountCode}/{Sequence} | Edit a Payment entry
+[**paymentsGetPayment**](PaymentsApi.md#paymentsGetPayment) | **GET** /api/v1/Payments/{OrgCode}/{AccountCode}/{Sequence} | Standard - Get a single Payment entry by its parameters
+[**paymentsGetPaymentList**](PaymentsApi.md#paymentsGetPaymentList) | **GET** /api/v1/Payments/{OrgCode} | Standard - Search for payments using OData.
+[**paymentsPostPayment**](PaymentsApi.md#paymentsPostPayment) | **POST** /api/v1/Payments | Standard - Add a Payment entry to an account
+[**paymentsPutPayment**](PaymentsApi.md#paymentsPutPayment) | **PUT** /api/v1/Payments/{OrgCode}/{AccountCode}/{Sequence} | Standard - Edit a Payment entry
 
 
 # **paymentsGetPayment**
 > \FomF\Ungerboeck\Client\Model\PaymentsModel paymentsGetPayment($org_code, $account_code, $sequence)
 
-Get a Payment entry by its parameters
+Standard - Get a single Payment entry by its parameters
 
 ### Example
 ```php
@@ -62,9 +62,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **paymentsGetPaymentList**
-> \FomF\Ungerboeck\Client\Model\PaymentsModel[] paymentsGetPaymentList($org_code, $search)
+> \FomF\Ungerboeck\Client\Model\PaymentsModel paymentsGetPaymentList($org_code, $search)
 
-Search for payments using OData.
+Standard - Search for payments using OData.
 
 ### Example
 ```php
@@ -77,7 +77,7 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\PaymentsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
     $result = $apiInstance->paymentsGetPaymentList($org_code, $search);
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\PaymentsModel[]**](../Model/PaymentsModel.md)
+[**\FomF\Ungerboeck\Client\Model\PaymentsModel**](../Model/PaymentsModel.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 # **paymentsPostPayment**
 > \FomF\Ungerboeck\Client\Model\PaymentsModel paymentsPostPayment($data)
 
-Add a Payment entry to an account
+Standard - Add a Payment entry to an account
 
 ### Example
 ```php
@@ -160,7 +160,7 @@ No authorization required
 # **paymentsPutPayment**
 > \FomF\Ungerboeck\Client\Model\PaymentsModel paymentsPutPayment($org_code, $account_code, $sequence, $data)
 
-Edit a Payment entry
+Standard - Edit a Payment entry
 
 ### Example
 ```php

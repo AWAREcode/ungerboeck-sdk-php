@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventStatusesGetEventStatuses**](EventStatusesApi.md#eventStatusesGetEventStatuses) | **GET** /api/v1/EventStatuses/{OrgCode}/{Code} | Get an event status entry by its parameters
-[**eventStatusesGetEventStatusesList**](EventStatusesApi.md#eventStatusesGetEventStatusesList) | **GET** /api/v1/EventStatuses/{OrgCode} | Search for event status entries using OData.
+[**eventStatusesGetEventStatus**](EventStatusesApi.md#eventStatusesGetEventStatus) | **GET** /api/v1/EventStatuses/{OrgCode}/{Code} | Basic - Get a single event status entry by its parameters
+[**eventStatusesGetEventStatusList**](EventStatusesApi.md#eventStatusesGetEventStatusList) | **GET** /api/v1/EventStatuses/{OrgCode} | Basic - Search for event status entries using OData.
 
 
-# **eventStatusesGetEventStatuses**
-> \FomF\Ungerboeck\Client\Model\EventStatusesModel eventStatusesGetEventStatuses($org_code, $code)
+# **eventStatusesGetEventStatus**
+> \FomF\Ungerboeck\Client\Model\EventStatusesModel eventStatusesGetEventStatus($org_code, $code)
 
-Get an event status entry by its parameters
+Basic - Get a single event status entry by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the event s
 $code = "code_example"; // string | The Code of the event status.
 
 try {
-    $result = $apiInstance->eventStatusesGetEventStatuses($org_code, $code);
+    $result = $apiInstance->eventStatusesGetEventStatus($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventStatusesApi->eventStatusesGetEventStatuses: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventStatusesApi->eventStatusesGetEventStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **eventStatusesGetEventStatusesList**
-> \FomF\Ungerboeck\Client\Model\EventStatusesModel[] eventStatusesGetEventStatusesList($org_code, $search)
+# **eventStatusesGetEventStatusList**
+> \FomF\Ungerboeck\Client\Model\EventStatusesModel eventStatusesGetEventStatusList($org_code, $search)
 
-Search for event status entries using OData.
+Basic - Search for event status entries using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\EventStatusesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->eventStatusesGetEventStatusesList($org_code, $search);
+    $result = $apiInstance->eventStatusesGetEventStatusList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventStatusesApi->eventStatusesGetEventStatusesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventStatusesApi->eventStatusesGetEventStatusList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\EventStatusesModel[]**](../Model/EventStatusesModel.md)
+[**\FomF\Ungerboeck\Client\Model\EventStatusesModel**](../Model/EventStatusesModel.md)
 
 ### Authorization
 

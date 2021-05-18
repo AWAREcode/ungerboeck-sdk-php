@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventJobCategoriesGetEventJobCategories**](EventJobCategoriesApi.md#eventJobCategoriesGetEventJobCategories) | **GET** /api/v1/EventJobCategories/{OrgCode}/{Code} | Get an event category entry by its parameters
-[**eventJobCategoriesGetEventJobCategoriesList**](EventJobCategoriesApi.md#eventJobCategoriesGetEventJobCategoriesList) | **GET** /api/v1/EventJobCategories/{OrgCode} | Search for event job categories using OData.
+[**eventJobCategoriesGetEventJobCategory**](EventJobCategoriesApi.md#eventJobCategoriesGetEventJobCategory) | **GET** /api/v1/EventJobCategories/{OrgCode}/{Code} | Basic - Get a single event category entry by its parameters
+[**eventJobCategoriesGetEventJobCategoryList**](EventJobCategoriesApi.md#eventJobCategoriesGetEventJobCategoryList) | **GET** /api/v1/EventJobCategories/{OrgCode} | Basic - Search for event job categories using OData.
 
 
-# **eventJobCategoriesGetEventJobCategories**
-> \FomF\Ungerboeck\Client\Model\EventJobCategoriesModel eventJobCategoriesGetEventJobCategories($org_code, $code)
+# **eventJobCategoriesGetEventJobCategory**
+> \FomF\Ungerboeck\Client\Model\EventJobCategoriesModel eventJobCategoriesGetEventJobCategory($org_code, $code)
 
-Get an event category entry by its parameters
+Basic - Get a single event category entry by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the event c
 $code = "code_example"; // string | The code of the event categories.
 
 try {
-    $result = $apiInstance->eventJobCategoriesGetEventJobCategories($org_code, $code);
+    $result = $apiInstance->eventJobCategoriesGetEventJobCategory($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventJobCategoriesApi->eventJobCategoriesGetEventJobCategories: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventJobCategoriesApi->eventJobCategoriesGetEventJobCategory: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **eventJobCategoriesGetEventJobCategoriesList**
-> \FomF\Ungerboeck\Client\Model\EventJobCategoriesModel[] eventJobCategoriesGetEventJobCategoriesList($org_code, $search)
+# **eventJobCategoriesGetEventJobCategoryList**
+> \FomF\Ungerboeck\Client\Model\EventJobCategoriesModel eventJobCategoriesGetEventJobCategoryList($org_code, $search)
 
-Search for event job categories using OData.
+Basic - Search for event job categories using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\EventJobCategoriesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->eventJobCategoriesGetEventJobCategoriesList($org_code, $search);
+    $result = $apiInstance->eventJobCategoriesGetEventJobCategoryList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventJobCategoriesApi->eventJobCategoriesGetEventJobCategoriesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventJobCategoriesApi->eventJobCategoriesGetEventJobCategoryList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\EventJobCategoriesModel[]**](../Model/EventJobCategoriesModel.md)
+[**\FomF\Ungerboeck\Client\Model\EventJobCategoriesModel**](../Model/EventJobCategoriesModel.md)
 
 ### Authorization
 

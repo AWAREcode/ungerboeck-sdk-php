@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**customFieldValidationTablesGetCustomFieldValidationTables**](CustomFieldValidationTablesApi.md#customFieldValidationTablesGetCustomFieldValidationTables) | **GET** /api/v1/CustomFieldValidationTables/{OrgCode}/{ID} | Get a custom field validation table by its parameters
-[**customFieldValidationTablesGetCustomFieldValidationTablesList**](CustomFieldValidationTablesApi.md#customFieldValidationTablesGetCustomFieldValidationTablesList) | **GET** /api/v1/CustomFieldValidationTables/{OrgCode} | Search for custom field validation table using OData.
+[**customFieldValidationTablesGetCustomFieldValidationTable**](CustomFieldValidationTablesApi.md#customFieldValidationTablesGetCustomFieldValidationTable) | **GET** /api/v1/CustomFieldValidationTables/{OrgCode}/{ID} | Basic - Get a single custom field validation table by its parameters
+[**customFieldValidationTablesGetCustomFieldValidationTableList**](CustomFieldValidationTablesApi.md#customFieldValidationTablesGetCustomFieldValidationTableList) | **GET** /api/v1/CustomFieldValidationTables/{OrgCode} | Basic - Search for custom field validation table using OData.
 
 
-# **customFieldValidationTablesGetCustomFieldValidationTables**
-> \FomF\Ungerboeck\Client\Model\CustomFieldValidationTablesModel customFieldValidationTablesGetCustomFieldValidationTables($org_code, $id)
+# **customFieldValidationTablesGetCustomFieldValidationTable**
+> \FomF\Ungerboeck\Client\Model\CustomFieldValidationTablesModel customFieldValidationTablesGetCustomFieldValidationTable($org_code, $id)
 
-Get a custom field validation table by its parameters
+Basic - Get a single custom field validation table by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the custom 
 $id = 56; // int | The table ID of the custom field validation table.
 
 try {
-    $result = $apiInstance->customFieldValidationTablesGetCustomFieldValidationTables($org_code, $id);
+    $result = $apiInstance->customFieldValidationTablesGetCustomFieldValidationTable($org_code, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomFieldValidationTablesApi->customFieldValidationTablesGetCustomFieldValidationTables: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomFieldValidationTablesApi->customFieldValidationTablesGetCustomFieldValidationTable: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customFieldValidationTablesGetCustomFieldValidationTablesList**
-> \FomF\Ungerboeck\Client\Model\CustomFieldValidationTablesModel[] customFieldValidationTablesGetCustomFieldValidationTablesList($org_code, $search)
+# **customFieldValidationTablesGetCustomFieldValidationTableList**
+> \FomF\Ungerboeck\Client\Model\CustomFieldValidationTablesModel customFieldValidationTablesGetCustomFieldValidationTableList($org_code, $search)
 
-Search for custom field validation table using OData.
+Basic - Search for custom field validation table using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\CustomFieldValidationTablesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->customFieldValidationTablesGetCustomFieldValidationTablesList($org_code, $search);
+    $result = $apiInstance->customFieldValidationTablesGetCustomFieldValidationTableList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomFieldValidationTablesApi->customFieldValidationTablesGetCustomFieldValidationTablesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomFieldValidationTablesApi->customFieldValidationTablesGetCustomFieldValidationTableList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\CustomFieldValidationTablesModel[]**](../Model/CustomFieldValidationTablesModel.md)
+[**\FomF\Ungerboeck\Client\Model\CustomFieldValidationTablesModel**](../Model/CustomFieldValidationTablesModel.md)
 
 ### Authorization
 
