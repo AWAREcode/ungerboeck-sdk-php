@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**workOrdersGetWorkOrders**](WorkOrdersApi.md#workOrdersGetWorkOrders) | **GET** /api/v1/WorkOrders/{OrgCode}/{Order}/{Department} | Get an work order by its parameters
-[**workOrdersGetWorkOrdersList**](WorkOrdersApi.md#workOrdersGetWorkOrdersList) | **GET** /api/v1/WorkOrders/{OrgCode} | Search for work order using OData.
+[**workOrdersGetWorkOrder**](WorkOrdersApi.md#workOrdersGetWorkOrder) | **GET** /api/v1/WorkOrders/{OrgCode}/{Order}/{Department} | Basic - Get a single work order by its parameters
+[**workOrdersGetWorkOrderList**](WorkOrdersApi.md#workOrdersGetWorkOrderList) | **GET** /api/v1/WorkOrders/{OrgCode} | Basic - Search for work order using OData.
 
 
-# **workOrdersGetWorkOrders**
-> \FomF\Ungerboeck\Client\Model\WorkOrdersModel workOrdersGetWorkOrders($org_code, $order, $department)
+# **workOrdersGetWorkOrder**
+> \FomF\Ungerboeck\Client\Model\WorkOrdersModel workOrdersGetWorkOrder($org_code, $order, $department)
 
-Get an work order by its parameters
+Basic - Get a single work order by its parameters
 
 ### Example
 ```php
@@ -28,10 +28,10 @@ $order = 56; // int | The code of the work order.
 $department = "department_example"; // string | The department of the work order.
 
 try {
-    $result = $apiInstance->workOrdersGetWorkOrders($org_code, $order, $department);
+    $result = $apiInstance->workOrdersGetWorkOrder($org_code, $order, $department);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkOrdersApi->workOrdersGetWorkOrders: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkOrdersApi->workOrdersGetWorkOrder: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -59,10 +59,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **workOrdersGetWorkOrdersList**
-> \FomF\Ungerboeck\Client\Model\WorkOrdersModel[] workOrdersGetWorkOrdersList($org_code, $search)
+# **workOrdersGetWorkOrderList**
+> \FomF\Ungerboeck\Client\Model\WorkOrdersModel workOrdersGetWorkOrderList($org_code, $search)
 
-Search for work order using OData.
+Basic - Search for work order using OData.
 
 ### Example
 ```php
@@ -75,13 +75,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\WorkOrdersApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->workOrdersGetWorkOrdersList($org_code, $search);
+    $result = $apiInstance->workOrdersGetWorkOrderList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkOrdersApi->workOrdersGetWorkOrdersList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkOrdersApi->workOrdersGetWorkOrderList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\WorkOrdersModel[]**](../Model/WorkOrdersModel.md)
+[**\FomF\Ungerboeck\Client\Model\WorkOrdersModel**](../Model/WorkOrdersModel.md)
 
 ### Authorization
 

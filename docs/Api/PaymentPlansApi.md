@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentPlansGetPaymentPlans**](PaymentPlansApi.md#paymentPlansGetPaymentPlans) | **GET** /api/v1/PaymentPlans/{OrgCode}/{PaymentPlanID} | Get a payment plan by its parameters
-[**paymentPlansGetPaymentPlansList**](PaymentPlansApi.md#paymentPlansGetPaymentPlansList) | **GET** /api/v1/PaymentPlans/{OrgCode} | Search for payment plan using OData.
+[**paymentPlansGetPaymentPlan**](PaymentPlansApi.md#paymentPlansGetPaymentPlan) | **GET** /api/v1/PaymentPlans/{OrgCode}/{PaymentPlanID} | Standard - Get a single payment plan by its parameters
+[**paymentPlansGetPaymentPlanList**](PaymentPlansApi.md#paymentPlansGetPaymentPlanList) | **GET** /api/v1/PaymentPlans/{OrgCode} | Standard - Search for payment plan using OData.
 
 
-# **paymentPlansGetPaymentPlans**
-> \FomF\Ungerboeck\Client\Model\PaymentPlansModel paymentPlansGetPaymentPlans($org_code, $payment_plan_id)
+# **paymentPlansGetPaymentPlan**
+> \FomF\Ungerboeck\Client\Model\PaymentPlansModel paymentPlansGetPaymentPlan($org_code, $payment_plan_id)
 
-Get a payment plan by its parameters
+Standard - Get a single payment plan by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the payment
 $payment_plan_id = 56; // int | The payment plan ID of the payment plan.
 
 try {
-    $result = $apiInstance->paymentPlansGetPaymentPlans($org_code, $payment_plan_id);
+    $result = $apiInstance->paymentPlansGetPaymentPlan($org_code, $payment_plan_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PaymentPlansApi->paymentPlansGetPaymentPlans: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PaymentPlansApi->paymentPlansGetPaymentPlan: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **paymentPlansGetPaymentPlansList**
-> \FomF\Ungerboeck\Client\Model\PaymentPlansModel[] paymentPlansGetPaymentPlansList($org_code, $search)
+# **paymentPlansGetPaymentPlanList**
+> \FomF\Ungerboeck\Client\Model\PaymentPlansModel paymentPlansGetPaymentPlanList($org_code, $search)
 
-Search for payment plan using OData.
+Standard - Search for payment plan using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\PaymentPlansApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->paymentPlansGetPaymentPlansList($org_code, $search);
+    $result = $apiInstance->paymentPlansGetPaymentPlanList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PaymentPlansApi->paymentPlansGetPaymentPlansList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PaymentPlansApi->paymentPlansGetPaymentPlanList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\PaymentPlansModel[]**](../Model/PaymentPlansModel.md)
+[**\FomF\Ungerboeck\Client\Model\PaymentPlansModel**](../Model/PaymentPlansModel.md)
 
 ### Authorization
 

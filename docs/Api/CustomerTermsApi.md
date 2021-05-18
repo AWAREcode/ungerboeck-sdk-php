@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**customerTermsGetCustomerTerms**](CustomerTermsApi.md#customerTermsGetCustomerTerms) | **GET** /api/v1/CustomerTerms/{OrgCode}/{Code} | Get a customer term by its parameters
-[**customerTermsGetCustomerTermsList**](CustomerTermsApi.md#customerTermsGetCustomerTermsList) | **GET** /api/v1/CustomerTerms/{OrgCode} | Search for customer terms using OData.
+[**customerTermsGetCustomerTerm**](CustomerTermsApi.md#customerTermsGetCustomerTerm) | **GET** /api/v1/CustomerTerms/{OrgCode}/{Code} | Standard - Get a single customer term by its parameters
+[**customerTermsGetCustomerTermList**](CustomerTermsApi.md#customerTermsGetCustomerTermList) | **GET** /api/v1/CustomerTerms/{OrgCode} | Standard - Search for customer terms using OData.
 
 
-# **customerTermsGetCustomerTerms**
-> \FomF\Ungerboeck\Client\Model\CustomerTermsModel customerTermsGetCustomerTerms($org_code, $code)
+# **customerTermsGetCustomerTerm**
+> \FomF\Ungerboeck\Client\Model\CustomerTermsModel customerTermsGetCustomerTerm($org_code, $code)
 
-Get a customer term by its parameters
+Standard - Get a single customer term by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the custome
 $code = "code_example"; // string | The code of the customer term.
 
 try {
-    $result = $apiInstance->customerTermsGetCustomerTerms($org_code, $code);
+    $result = $apiInstance->customerTermsGetCustomerTerm($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerTermsApi->customerTermsGetCustomerTerms: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerTermsApi->customerTermsGetCustomerTerm: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerTermsGetCustomerTermsList**
-> \FomF\Ungerboeck\Client\Model\CustomerTermsModel[] customerTermsGetCustomerTermsList($org_code, $search)
+# **customerTermsGetCustomerTermList**
+> \FomF\Ungerboeck\Client\Model\CustomerTermsModel customerTermsGetCustomerTermList($org_code, $search)
 
-Search for customer terms using OData.
+Standard - Search for customer terms using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\CustomerTermsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->customerTermsGetCustomerTermsList($org_code, $search);
+    $result = $apiInstance->customerTermsGetCustomerTermList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerTermsApi->customerTermsGetCustomerTermsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerTermsApi->customerTermsGetCustomerTermList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\CustomerTermsModel[]**](../Model/CustomerTermsModel.md)
+[**\FomF\Ungerboeck\Client\Model\CustomerTermsModel**](../Model/CustomerTermsModel.md)
 
 ### Authorization
 

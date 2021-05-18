@@ -4,16 +4,16 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**spacesGetSpaces**](SpacesApi.md#spacesGetSpaces) | **GET** /api/v1/Spaces/{OrgCode}/{Code} | Get a space by its parameters
-[**spacesGetSpacesList**](SpacesApi.md#spacesGetSpacesList) | **GET** /api/v1/Spaces/{OrgCode} | Search for space using OData.
-[**spacesPostSpaces**](SpacesApi.md#spacesPostSpaces) | **POST** /api/v1/Spaces | Add a space
-[**spacesPutSpaces**](SpacesApi.md#spacesPutSpaces) | **PUT** /api/v1/Spaces/{OrgCode}/{Code} | Edit a space
+[**spacesGetSpace**](SpacesApi.md#spacesGetSpace) | **GET** /api/v1/Spaces/{OrgCode}/{Code} | Basic - Get a single space by its parameters
+[**spacesGetSpaceList**](SpacesApi.md#spacesGetSpaceList) | **GET** /api/v1/Spaces/{OrgCode} | Basic - Search for space using OData.
+[**spacesPostSpace**](SpacesApi.md#spacesPostSpace) | **POST** /api/v1/Spaces | Standard - Add a space
+[**spacesPutSpace**](SpacesApi.md#spacesPutSpace) | **PUT** /api/v1/Spaces/{OrgCode}/{Code} | Standard - Edit a space
 
 
-# **spacesGetSpaces**
-> \FomF\Ungerboeck\Client\Model\SpacesModel spacesGetSpaces($org_code, $code)
+# **spacesGetSpace**
+> \FomF\Ungerboeck\Client\Model\SpacesModel spacesGetSpace($org_code, $code)
 
-Get a space by its parameters
+Basic - Get a single space by its parameters
 
 ### Example
 ```php
@@ -29,10 +29,10 @@ $org_code = "org_code_example"; // string | The organization code of the space.
 $code = "code_example"; // string | The code of the space.
 
 try {
-    $result = $apiInstance->spacesGetSpaces($org_code, $code);
+    $result = $apiInstance->spacesGetSpace($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SpacesApi->spacesGetSpaces: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SpacesApi->spacesGetSpace: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -59,10 +59,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **spacesGetSpacesList**
-> \FomF\Ungerboeck\Client\Model\SpacesModel[] spacesGetSpacesList($org_code, $search)
+# **spacesGetSpaceList**
+> \FomF\Ungerboeck\Client\Model\SpacesModel spacesGetSpaceList($org_code, $search)
 
-Search for space using OData.
+Basic - Search for space using OData.
 
 ### Example
 ```php
@@ -75,13 +75,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\SpacesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->spacesGetSpacesList($org_code, $search);
+    $result = $apiInstance->spacesGetSpaceList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SpacesApi->spacesGetSpacesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SpacesApi->spacesGetSpaceList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\SpacesModel[]**](../Model/SpacesModel.md)
+[**\FomF\Ungerboeck\Client\Model\SpacesModel**](../Model/SpacesModel.md)
 
 ### Authorization
 
@@ -108,10 +108,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **spacesPostSpaces**
-> \FomF\Ungerboeck\Client\Model\SpacesModel spacesPostSpaces($data)
+# **spacesPostSpace**
+> \FomF\Ungerboeck\Client\Model\SpacesModel spacesPostSpace($data)
 
-Add a space
+Standard - Add a space
 
 ### Example
 ```php
@@ -126,10 +126,10 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\SpacesApi(
 $data = new \FomF\Ungerboeck\Client\Model\SpacesModel(); // \FomF\Ungerboeck\Client\Model\SpacesModel | (Include in the HTTP Body) A SpacesModel to add.
 
 try {
-    $result = $apiInstance->spacesPostSpaces($data);
+    $result = $apiInstance->spacesPostSpace($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SpacesApi->spacesPostSpaces: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SpacesApi->spacesPostSpace: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -155,10 +155,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **spacesPutSpaces**
-> \FomF\Ungerboeck\Client\Model\SpacesModel spacesPutSpaces($org_code, $code, $data)
+# **spacesPutSpace**
+> \FomF\Ungerboeck\Client\Model\SpacesModel spacesPutSpace($org_code, $code, $data)
 
-Edit a space
+Standard - Edit a space
 
 ### Example
 ```php
@@ -175,10 +175,10 @@ $code = "code_example"; // string | The code of the space.
 $data = new \FomF\Ungerboeck\Client\Model\SpacesModel(); // \FomF\Ungerboeck\Client\Model\SpacesModel | (Include in the HTTP Body) A SpacesModel to edit.
 
 try {
-    $result = $apiInstance->spacesPutSpaces($org_code, $code, $data);
+    $result = $apiInstance->spacesPutSpace($org_code, $code, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SpacesApi->spacesPutSpaces: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SpacesApi->spacesPutSpace: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

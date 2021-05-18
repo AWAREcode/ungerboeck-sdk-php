@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userDefinedFieldsGetUserDefinedFields**](UserDefinedFieldsApi.md#userDefinedFieldsGetUserDefinedFields) | **GET** /api/v1/UserDefinedFields/{OrgCode}/{IssueOpportunityClass}/{IssueOpportunityType}/{SequenceNumber} | Get a user defined field by its parameters
-[**userDefinedFieldsGetUserDefinedFieldsList**](UserDefinedFieldsApi.md#userDefinedFieldsGetUserDefinedFieldsList) | **GET** /api/v1/UserDefinedFields/{OrgCode} | Search for user defined field using OData.
+[**userDefinedFieldsGetUserDefinedField**](UserDefinedFieldsApi.md#userDefinedFieldsGetUserDefinedField) | **GET** /api/v1/UserDefinedFields/{OrgCode}/{IssueOpportunityClass}/{IssueOpportunityType}/{SequenceNumber} | Basic - Get a single user defined field entry by its parameters.  Note, this is referring to the metadata of the User Field itself, not the user field values stored on the various Ungerboeck areas.
+[**userDefinedFieldsGetUserDefinedFieldList**](UserDefinedFieldsApi.md#userDefinedFieldsGetUserDefinedFieldList) | **GET** /api/v1/UserDefinedFields/{OrgCode} | Basic - Search for user defined field metadata using OData.  Note, this is referring to the metadata of the User Field itself, not the user field values stored on the various Ungerboeck areas.
 
 
-# **userDefinedFieldsGetUserDefinedFields**
-> \FomF\Ungerboeck\Client\Model\UserDefinedFieldsModel userDefinedFieldsGetUserDefinedFields($org_code, $issue_opportunity_class, $issue_opportunity_type, $sequence_number)
+# **userDefinedFieldsGetUserDefinedField**
+> \FomF\Ungerboeck\Client\Model\UserDefinedFieldsModel userDefinedFieldsGetUserDefinedField($org_code, $issue_opportunity_class, $issue_opportunity_type, $sequence_number)
 
-Get a user defined field by its parameters
+Basic - Get a single user defined field entry by its parameters.  Note, this is referring to the metadata of the User Field itself, not the user field values stored on the various Ungerboeck areas.
 
 ### Example
 ```php
@@ -29,10 +29,10 @@ $issue_opportunity_type = "issue_opportunity_type_example"; // string | The issu
 $sequence_number = 56; // int | The sequence of the user defined field.
 
 try {
-    $result = $apiInstance->userDefinedFieldsGetUserDefinedFields($org_code, $issue_opportunity_class, $issue_opportunity_type, $sequence_number);
+    $result = $apiInstance->userDefinedFieldsGetUserDefinedField($org_code, $issue_opportunity_class, $issue_opportunity_type, $sequence_number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserDefinedFieldsApi->userDefinedFieldsGetUserDefinedFields: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserDefinedFieldsApi->userDefinedFieldsGetUserDefinedField: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,10 +61,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **userDefinedFieldsGetUserDefinedFieldsList**
-> \FomF\Ungerboeck\Client\Model\UserDefinedFieldsModel[] userDefinedFieldsGetUserDefinedFieldsList($org_code, $search)
+# **userDefinedFieldsGetUserDefinedFieldList**
+> \FomF\Ungerboeck\Client\Model\UserDefinedFieldsModel userDefinedFieldsGetUserDefinedFieldList($org_code, $search)
 
-Search for user defined field using OData.
+Basic - Search for user defined field metadata using OData.  Note, this is referring to the metadata of the User Field itself, not the user field values stored on the various Ungerboeck areas.
 
 ### Example
 ```php
@@ -77,13 +77,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\UserDefinedFieldsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->userDefinedFieldsGetUserDefinedFieldsList($org_code, $search);
+    $result = $apiInstance->userDefinedFieldsGetUserDefinedFieldList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserDefinedFieldsApi->userDefinedFieldsGetUserDefinedFieldsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserDefinedFieldsApi->userDefinedFieldsGetUserDefinedFieldList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\UserDefinedFieldsModel[]**](../Model/UserDefinedFieldsModel.md)
+[**\FomF\Ungerboeck\Client\Model\UserDefinedFieldsModel**](../Model/UserDefinedFieldsModel.md)
 
 ### Authorization
 

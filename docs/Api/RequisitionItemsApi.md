@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**requisitionItemsGetRequisitionItems**](RequisitionItemsApi.md#requisitionItemsGetRequisitionItems) | **GET** /api/v1/RequisitionItems/{OrgCode}/{Number}/{Sequence} | Get a requisition item by its parameters
-[**requisitionItemsGetRequisitionItemsList**](RequisitionItemsApi.md#requisitionItemsGetRequisitionItemsList) | **GET** /api/v1/RequisitionItems/{OrgCode} | Search for requisition item using OData.
+[**requisitionItemsGetRequisitionItem**](RequisitionItemsApi.md#requisitionItemsGetRequisitionItem) | **GET** /api/v1/RequisitionItems/{OrgCode}/{Number}/{Sequence} | Standard - Get a single requisition item by its parameters
+[**requisitionItemsGetRequisitionItemList**](RequisitionItemsApi.md#requisitionItemsGetRequisitionItemList) | **GET** /api/v1/RequisitionItems/{OrgCode} | Standard - Search for requisition item using OData.
 
 
-# **requisitionItemsGetRequisitionItems**
-> \FomF\Ungerboeck\Client\Model\RequisitionItemsModel requisitionItemsGetRequisitionItems($org_code, $number, $sequence)
+# **requisitionItemsGetRequisitionItem**
+> \FomF\Ungerboeck\Client\Model\RequisitionApprovalModel requisitionItemsGetRequisitionItem($org_code, $number, $sequence)
 
-Get a requisition item by its parameters
+Standard - Get a single requisition item by its parameters
 
 ### Example
 ```php
@@ -28,10 +28,10 @@ $number = 56; // int | The number of the requisition the requisition item is ass
 $sequence = 56; // int | The sequence of the requisition item.
 
 try {
-    $result = $apiInstance->requisitionItemsGetRequisitionItems($org_code, $number, $sequence);
+    $result = $apiInstance->requisitionItemsGetRequisitionItem($org_code, $number, $sequence);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RequisitionItemsApi->requisitionItemsGetRequisitionItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RequisitionItemsApi->requisitionItemsGetRequisitionItem: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\RequisitionItemsModel**](../Model/RequisitionItemsModel.md)
+[**\FomF\Ungerboeck\Client\Model\RequisitionApprovalModel**](../Model/RequisitionApprovalModel.md)
 
 ### Authorization
 
@@ -59,10 +59,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **requisitionItemsGetRequisitionItemsList**
-> \FomF\Ungerboeck\Client\Model\RequisitionItemsModel[] requisitionItemsGetRequisitionItemsList($org_code, $search)
+# **requisitionItemsGetRequisitionItemList**
+> \FomF\Ungerboeck\Client\Model\RequisitionItemsModel requisitionItemsGetRequisitionItemList($org_code, $search)
 
-Search for requisition item using OData.
+Standard - Search for requisition item using OData.
 
 ### Example
 ```php
@@ -75,13 +75,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\RequisitionItemsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->requisitionItemsGetRequisitionItemsList($org_code, $search);
+    $result = $apiInstance->requisitionItemsGetRequisitionItemList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RequisitionItemsApi->requisitionItemsGetRequisitionItemsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RequisitionItemsApi->requisitionItemsGetRequisitionItemList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\RequisitionItemsModel[]**](../Model/RequisitionItemsModel.md)
+[**\FomF\Ungerboeck\Client\Model\RequisitionItemsModel**](../Model/RequisitionItemsModel.md)
 
 ### Authorization
 

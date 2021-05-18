@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**documentClassesGetDocumentClasses**](DocumentClassesApi.md#documentClassesGetDocumentClasses) | **GET** /api/v1/DocumentClasses/{OrgCode}/{Class} | Get a document class by its parameters
-[**documentClassesGetDocumentClassesList**](DocumentClassesApi.md#documentClassesGetDocumentClassesList) | **GET** /api/v1/DocumentClasses/{OrgCode} | Search for document class using OData.
+[**documentClassesGetDocumentClass**](DocumentClassesApi.md#documentClassesGetDocumentClass) | **GET** /api/v1/DocumentClasses/{OrgCode}/{Class} | Basic - Get a single document class by its parameters
+[**documentClassesGetDocumentClassList**](DocumentClassesApi.md#documentClassesGetDocumentClassList) | **GET** /api/v1/DocumentClasses/{OrgCode} | Basic - Search for document class using OData.
 
 
-# **documentClassesGetDocumentClasses**
-> \FomF\Ungerboeck\Client\Model\DocumentClassesModel documentClassesGetDocumentClasses($org_code, $class)
+# **documentClassesGetDocumentClass**
+> \FomF\Ungerboeck\Client\Model\DocumentClassesModel documentClassesGetDocumentClass($org_code, $class)
 
-Get a document class by its parameters
+Basic - Get a single document class by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the documen
 $class = "class_example"; // string | The class of the document class.
 
 try {
-    $result = $apiInstance->documentClassesGetDocumentClasses($org_code, $class);
+    $result = $apiInstance->documentClassesGetDocumentClass($org_code, $class);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DocumentClassesApi->documentClassesGetDocumentClasses: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DocumentClassesApi->documentClassesGetDocumentClass: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **documentClassesGetDocumentClassesList**
-> \FomF\Ungerboeck\Client\Model\DocumentClassesModel[] documentClassesGetDocumentClassesList($org_code, $search)
+# **documentClassesGetDocumentClassList**
+> \FomF\Ungerboeck\Client\Model\DocumentClassesModel documentClassesGetDocumentClassList($org_code, $search)
 
-Search for document class using OData.
+Basic - Search for document class using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\DocumentClassesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->documentClassesGetDocumentClassesList($org_code, $search);
+    $result = $apiInstance->documentClassesGetDocumentClassList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DocumentClassesApi->documentClassesGetDocumentClassesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DocumentClassesApi->documentClassesGetDocumentClassList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\DocumentClassesModel[]**](../Model/DocumentClassesModel.md)
+[**\FomF\Ungerboeck\Client\Model\DocumentClassesModel**](../Model/DocumentClassesModel.md)
 
 ### Authorization
 

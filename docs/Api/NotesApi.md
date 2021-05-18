@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**notesDeleteNotes**](NotesApi.md#notesDeleteNotes) | **DELETE** /api/v1/Notes/{OrgCode}/{Type}/{Code}/{SequenceNumber} | Delete a note
-[**notesGetNotes**](NotesApi.md#notesGetNotes) | **GET** /api/v1/Notes/{OrgCode}/{Type}/{Code}/{SequenceNumber} | Get a note by its parameters
-[**notesGetNotesList**](NotesApi.md#notesGetNotesList) | **GET** /api/v1/Notes/{OrgCode} | Search for note using OData.
-[**notesPostNotes**](NotesApi.md#notesPostNotes) | **POST** /api/v1/Notes | Add an note
-[**notesPutNotes**](NotesApi.md#notesPutNotes) | **PUT** /api/v1/Notes/{OrgCode}/{Type}/{Code}/{SequenceNumber} | Edit an note
+[**notesDeleteNote**](NotesApi.md#notesDeleteNote) | **DELETE** /api/v1/Notes/{OrgCode}/{Type}/{Code}/{SequenceNumber} | Basic - Delete a note
+[**notesGetNote**](NotesApi.md#notesGetNote) | **GET** /api/v1/Notes/{OrgCode}/{Type}/{Code}/{SequenceNumber} | Basic - Get a single note by its parameters
+[**notesGetNoteList**](NotesApi.md#notesGetNoteList) | **GET** /api/v1/Notes/{OrgCode} | Basic - Search for note using OData.
+[**notesPostNote**](NotesApi.md#notesPostNote) | **POST** /api/v1/Notes | Basic - Add an note
+[**notesPutNote**](NotesApi.md#notesPutNote) | **PUT** /api/v1/Notes/{OrgCode}/{Type}/{Code}/{SequenceNumber} | Basic - Edit an note
 
 
-# **notesDeleteNotes**
-> notesDeleteNotes($org_code, $type, $code, $sequence_number)
+# **notesDeleteNote**
+> notesDeleteNote($org_code, $type, $code, $sequence_number)
 
-Delete a note
+Basic - Delete a note
 
 ### Example
 ```php
@@ -32,9 +32,9 @@ $code = "code_example"; // string | The code of the note.
 $sequence_number = 1.2; // double | The sequence number of the note.
 
 try {
-    $apiInstance->notesDeleteNotes($org_code, $type, $code, $sequence_number);
+    $apiInstance->notesDeleteNote($org_code, $type, $code, $sequence_number);
 } catch (Exception $e) {
-    echo 'Exception when calling NotesApi->notesDeleteNotes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NotesApi->notesDeleteNote: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -63,10 +63,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **notesGetNotes**
-> \FomF\Ungerboeck\Client\Model\NotesModel notesGetNotes($org_code, $type, $code, $sequence_number)
+# **notesGetNote**
+> \FomF\Ungerboeck\Client\Model\NotesModel notesGetNote($org_code, $type, $code, $sequence_number)
 
-Get a note by its parameters
+Basic - Get a single note by its parameters
 
 ### Example
 ```php
@@ -84,10 +84,10 @@ $code = "code_example"; // string | The code of the note.
 $sequence_number = 1.2; // double | The sequence number of the note.
 
 try {
-    $result = $apiInstance->notesGetNotes($org_code, $type, $code, $sequence_number);
+    $result = $apiInstance->notesGetNote($org_code, $type, $code, $sequence_number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NotesApi->notesGetNotes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NotesApi->notesGetNote: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -116,10 +116,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **notesGetNotesList**
-> \FomF\Ungerboeck\Client\Model\NotesModel[] notesGetNotesList($org_code, $search)
+# **notesGetNoteList**
+> \FomF\Ungerboeck\Client\Model\NotesModel notesGetNoteList($org_code, $search)
 
-Search for note using OData.
+Basic - Search for note using OData.
 
 ### Example
 ```php
@@ -132,13 +132,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\NotesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->notesGetNotesList($org_code, $search);
+    $result = $apiInstance->notesGetNoteList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NotesApi->notesGetNotesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NotesApi->notesGetNoteList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -148,11 +148,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\NotesModel[]**](../Model/NotesModel.md)
+[**\FomF\Ungerboeck\Client\Model\NotesModel**](../Model/NotesModel.md)
 
 ### Authorization
 
@@ -165,10 +165,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **notesPostNotes**
-> \FomF\Ungerboeck\Client\Model\NotesModel notesPostNotes($data)
+# **notesPostNote**
+> \FomF\Ungerboeck\Client\Model\NotesModel notesPostNote($data)
 
-Add an note
+Basic - Add an note
 
 ### Example
 ```php
@@ -183,10 +183,10 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\NotesApi(
 $data = new \FomF\Ungerboeck\Client\Model\NotesModel(); // \FomF\Ungerboeck\Client\Model\NotesModel | (Include in the HTTP Body) An NotesModel to add.
 
 try {
-    $result = $apiInstance->notesPostNotes($data);
+    $result = $apiInstance->notesPostNote($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NotesApi->notesPostNotes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NotesApi->notesPostNote: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -212,10 +212,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **notesPutNotes**
-> \FomF\Ungerboeck\Client\Model\NotesModel notesPutNotes($org_code, $type, $code, $sequence_number, $data)
+# **notesPutNote**
+> \FomF\Ungerboeck\Client\Model\NotesModel notesPutNote($org_code, $type, $code, $sequence_number, $data)
 
-Edit an note
+Basic - Edit an note
 
 ### Example
 ```php
@@ -234,10 +234,10 @@ $sequence_number = 1.2; // double | The sequence number of the note.
 $data = new \FomF\Ungerboeck\Client\Model\NotesModel(); // \FomF\Ungerboeck\Client\Model\NotesModel | (Include in the HTTP Body) An NotesModel to edit.
 
 try {
-    $result = $apiInstance->notesPutNotes($org_code, $type, $code, $sequence_number, $data);
+    $result = $apiInstance->notesPutNote($org_code, $type, $code, $sequence_number, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NotesApi->notesPutNotes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NotesApi->notesPutNote: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

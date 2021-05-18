@@ -4,18 +4,18 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**functionsDeleteFunction**](FunctionsApi.md#functionsDeleteFunction) | **DELETE** /api/v1/Functions/{OrgCode}/{EventID}/{FunctionID} | Delete a function from an event
-[**functionsGetFunction**](FunctionsApi.md#functionsGetFunction) | **GET** /api/v1/Functions/{OrgCode}/{EventID}/{FunctionID} | Get a function by its parameters
-[**functionsGetFunctionsList**](FunctionsApi.md#functionsGetFunctionsList) | **GET** /api/v1/Functions/{OrgCode} | Search for Functions using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
-[**functionsInsertAfter**](FunctionsApi.md#functionsInsertAfter) | **POST** /api/v1/Functions/InsertAfter/{TargetFunctionID} | Add a function to an event after the target function the function hierarchy.  The new function will appear on the same level as the target function.
-[**functionsInsertIndented**](FunctionsApi.md#functionsInsertIndented) | **POST** /api/v1/Functions/InsertIndented/{ParentFunctionID} | Add a function to an event indented into the target function in the function hierarchy.  The new function will appear as a child of the parent function.
-[**functionsPutFunction**](FunctionsApi.md#functionsPutFunction) | **PUT** /api/v1/Functions/{OrgCode}/{EventID}/{FunctionID} | Edit a Function
+[**functionsDeleteFunction**](FunctionsApi.md#functionsDeleteFunction) | **DELETE** /api/v1/Functions/{OrgCode}/{EventID}/{FunctionID} | Standard - Delete a function from an event
+[**functionsGetFunction**](FunctionsApi.md#functionsGetFunction) | **GET** /api/v1/Functions/{OrgCode}/{EventID}/{FunctionID} | Basic - Get a single function by its parameters
+[**functionsGetFunctionList**](FunctionsApi.md#functionsGetFunctionList) | **GET** /api/v1/Functions/{OrgCode} | Basic - Search for Functions using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+[**functionsInsertAfter**](FunctionsApi.md#functionsInsertAfter) | **POST** /api/v1/Functions/InsertAfter/{TargetFunctionID} | Standard - Add a function to an event after the target function the function hierarchy.  The new function will appear on the same level as the target function.
+[**functionsInsertIndented**](FunctionsApi.md#functionsInsertIndented) | **POST** /api/v1/Functions/InsertIndented/{ParentFunctionID} | Standard - Add a function to an event indented into the target function in the function hierarchy.  The new function will appear as a child of the parent function.
+[**functionsPutFunction**](FunctionsApi.md#functionsPutFunction) | **PUT** /api/v1/Functions/{OrgCode}/{EventID}/{FunctionID} | Standard - Edit a Function
 
 
 # **functionsDeleteFunction**
 > functionsDeleteFunction($org_code, $event_id, $function_id)
 
-Delete a function from an event
+Standard - Delete a function from an event
 
 ### Example
 ```php
@@ -65,7 +65,7 @@ No authorization required
 # **functionsGetFunction**
 > \FomF\Ungerboeck\Client\Model\FunctionsModel functionsGetFunction($org_code, $event_id, $function_id)
 
-Get a function by its parameters
+Basic - Get a single function by its parameters
 
 ### Example
 ```php
@@ -113,10 +113,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **functionsGetFunctionsList**
-> \FomF\Ungerboeck\Client\Model\FunctionsModel[] functionsGetFunctionsList($org_code, $search)
+# **functionsGetFunctionList**
+> \FomF\Ungerboeck\Client\Model\FunctionsModel functionsGetFunctionList($org_code, $search)
 
-Search for Functions using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+Basic - Search for Functions using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
 
 ### Example
 ```php
@@ -129,13 +129,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\FunctionsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->functionsGetFunctionsList($org_code, $search);
+    $result = $apiInstance->functionsGetFunctionList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FunctionsApi->functionsGetFunctionsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FunctionsApi->functionsGetFunctionList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -145,11 +145,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\FunctionsModel[]**](../Model/FunctionsModel.md)
+[**\FomF\Ungerboeck\Client\Model\FunctionsModel**](../Model/FunctionsModel.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ No authorization required
 # **functionsInsertAfter**
 > \FomF\Ungerboeck\Client\Model\FunctionsModel functionsInsertAfter($target_function_id, $data)
 
-Add a function to an event after the target function the function hierarchy.  The new function will appear on the same level as the target function.
+Standard - Add a function to an event after the target function the function hierarchy.  The new function will appear on the same level as the target function.
 
 ### Example
 ```php
@@ -214,7 +214,7 @@ No authorization required
 # **functionsInsertIndented**
 > \FomF\Ungerboeck\Client\Model\FunctionsModel functionsInsertIndented($parent_function_id, $data)
 
-Add a function to an event indented into the target function in the function hierarchy.  The new function will appear as a child of the parent function.
+Standard - Add a function to an event indented into the target function in the function hierarchy.  The new function will appear as a child of the parent function.
 
 ### Example
 ```php
@@ -263,7 +263,7 @@ No authorization required
 # **functionsPutFunction**
 > \FomF\Ungerboeck\Client\Model\FunctionsModel functionsPutFunction($org_code, $event_id, $function_id, $data)
 
-Edit a Function
+Standard - Edit a Function
 
 ### Example
 ```php

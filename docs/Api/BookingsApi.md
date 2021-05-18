@@ -4,16 +4,16 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bookingsGetBooking**](BookingsApi.md#bookingsGetBooking) | **GET** /api/v1/Bookings/{OrgCode}/{Event}/{SequenceNumber} | Get a booking by its parameters
-[**bookingsGetBookingsList**](BookingsApi.md#bookingsGetBookingsList) | **GET** /api/v1/Bookings/{OrgCode} | Search for bookings using OData.
-[**bookingsPostBooking**](BookingsApi.md#bookingsPostBooking) | **POST** /api/v1/Bookings | Add a booking to an existing event
-[**bookingsPutBooking**](BookingsApi.md#bookingsPutBooking) | **PUT** /api/v1/Bookings/{OrgCode}/{Event}/{SequenceNumber} | Edit a booking on an event
+[**bookingsGetBooking**](BookingsApi.md#bookingsGetBooking) | **GET** /api/v1/Bookings/{OrgCode}/{Event}/{SequenceNumber} | Basic - Get a single booking by its parameters
+[**bookingsGetBookingList**](BookingsApi.md#bookingsGetBookingList) | **GET** /api/v1/Bookings/{OrgCode} | Basic - Search for bookings using OData.
+[**bookingsPostBooking**](BookingsApi.md#bookingsPostBooking) | **POST** /api/v1/Bookings | Extended (Bookings) - Add a booking to an existing event
+[**bookingsPutBooking**](BookingsApi.md#bookingsPutBooking) | **PUT** /api/v1/Bookings/{OrgCode}/{Event}/{SequenceNumber} | Extended (Bookings) - Edit a booking on an event
 
 
 # **bookingsGetBooking**
 > \FomF\Ungerboeck\Client\Model\BookingsModel bookingsGetBooking($org_code, $event, $sequence_number)
 
-Get a booking by its parameters
+Basic - Get a single booking by its parameters
 
 ### Example
 ```php
@@ -61,10 +61,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **bookingsGetBookingsList**
-> \FomF\Ungerboeck\Client\Model\BookingsModel[] bookingsGetBookingsList($org_code, $search)
+# **bookingsGetBookingList**
+> \FomF\Ungerboeck\Client\Model\BookingsModel bookingsGetBookingList($org_code, $search)
 
-Search for bookings using OData.
+Basic - Search for bookings using OData.
 
 ### Example
 ```php
@@ -77,13 +77,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\BookingsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->bookingsGetBookingsList($org_code, $search);
+    $result = $apiInstance->bookingsGetBookingList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BookingsApi->bookingsGetBookingsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BookingsApi->bookingsGetBookingList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\BookingsModel[]**](../Model/BookingsModel.md)
+[**\FomF\Ungerboeck\Client\Model\BookingsModel**](../Model/BookingsModel.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 # **bookingsPostBooking**
 > \FomF\Ungerboeck\Client\Model\BookingsModel bookingsPostBooking($data)
 
-Add a booking to an existing event
+Extended (Bookings) - Add a booking to an existing event
 
 ### Example
 ```php
@@ -160,7 +160,7 @@ No authorization required
 # **bookingsPutBooking**
 > \FomF\Ungerboeck\Client\Model\BookingsModel bookingsPutBooking($org_code, $event, $sequence_number, $data)
 
-Edit a booking on an event
+Extended (Bookings) - Edit a booking on an event
 
 ### Example
 ```php

@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**opportunityStatusesGetOpportunityStatus**](OpportunityStatusesApi.md#opportunityStatusesGetOpportunityStatus) | **GET** /api/v1/OpportunityStatuses/{OrgCode}/{Code}/{Designation} | Get a Opportunity Status by its parameters
-[**opportunityStatusesGetOpportunityStatusList**](OpportunityStatusesApi.md#opportunityStatusesGetOpportunityStatusList) | **GET** /api/v1/OpportunityStatuses/{OrgCode} | Search for opportunity status using OData.
+[**opportunityStatusesGetOpportunityStatus**](OpportunityStatusesApi.md#opportunityStatusesGetOpportunityStatus) | **GET** /api/v1/OpportunityStatuses/{OrgCode}/{Code}/{Designation} | Basic - Get a single Opportunity Status entry by its parameters
+[**opportunityStatusesGetOpportunityStatusList**](OpportunityStatusesApi.md#opportunityStatusesGetOpportunityStatusList) | **GET** /api/v1/OpportunityStatuses/{OrgCode} | Basic - Search for opportunity status using OData.
 
 
 # **opportunityStatusesGetOpportunityStatus**
 > \FomF\Ungerboeck\Client\Model\OpportunityStatusesModel opportunityStatusesGetOpportunityStatus($org_code, $code, $designation)
 
-Get a Opportunity Status by its parameters
+Basic - Get a single Opportunity Status entry by its parameters
 
 ### Example
 ```php
@@ -60,9 +60,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **opportunityStatusesGetOpportunityStatusList**
-> \FomF\Ungerboeck\Client\Model\OpportunityStatusesModel[] opportunityStatusesGetOpportunityStatusList($org_code, $search)
+> \FomF\Ungerboeck\Client\Model\OpportunityStatusesModel opportunityStatusesGetOpportunityStatusList($org_code, $search)
 
-Search for opportunity status using OData.
+Basic - Search for opportunity status using OData.
 
 ### Example
 ```php
@@ -75,7 +75,7 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\OpportunityStatusesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
     $result = $apiInstance->opportunityStatusesGetOpportunityStatusList($org_code, $search);
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\OpportunityStatusesModel[]**](../Model/OpportunityStatusesModel.md)
+[**\FomF\Ungerboeck\Client\Model\OpportunityStatusesModel**](../Model/OpportunityStatusesModel.md)
 
 ### Authorization
 

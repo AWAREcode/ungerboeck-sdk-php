@@ -4,15 +4,15 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**invoicesGetInvoices**](InvoicesApi.md#invoicesGetInvoices) | **GET** /api/v1/Invoices/{OrgCode}/{InvoiceNumber}/{Source} | Get an invoice by its parameters
-[**invoicesGetInvoicesList**](InvoicesApi.md#invoicesGetInvoicesList) | **GET** /api/v1/Invoices/{OrgCode} | Search for invoices using OData.
-[**invoicesPutNotes**](InvoicesApi.md#invoicesPutNotes) | **PUT** /api/v1/Invoices/{OrgCode}/{InvoiceNumber}/{Source} | Edit an invoice
+[**invoicesGetInvoice**](InvoicesApi.md#invoicesGetInvoice) | **GET** /api/v1/Invoices/{OrgCode}/{InvoiceNumber}/{Source} | Standard - Get a single invoice by its parameters
+[**invoicesGetInvoiceList**](InvoicesApi.md#invoicesGetInvoiceList) | **GET** /api/v1/Invoices/{OrgCode} | Standard - Search for invoices using OData.
+[**invoicesPutInvoice**](InvoicesApi.md#invoicesPutInvoice) | **PUT** /api/v1/Invoices/{OrgCode}/{InvoiceNumber}/{Source} | Standard - Edit an invoice
 
 
-# **invoicesGetInvoices**
-> \FomF\Ungerboeck\Client\Model\InvoicesModel invoicesGetInvoices($org_code, $source, $invoice_number)
+# **invoicesGetInvoice**
+> \FomF\Ungerboeck\Client\Model\InvoicesModel invoicesGetInvoice($org_code, $source, $invoice_number)
 
-Get an invoice by its parameters
+Standard - Get a single invoice by its parameters
 
 ### Example
 ```php
@@ -29,10 +29,10 @@ $source = "source_example"; // string | The code value of the source of the invo
 $invoice_number = 56; // int | The number of the invoice.
 
 try {
-    $result = $apiInstance->invoicesGetInvoices($org_code, $source, $invoice_number);
+    $result = $apiInstance->invoicesGetInvoice($org_code, $source, $invoice_number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling InvoicesApi->invoicesGetInvoices: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InvoicesApi->invoicesGetInvoice: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -60,10 +60,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **invoicesGetInvoicesList**
-> \FomF\Ungerboeck\Client\Model\InvoicesModel[] invoicesGetInvoicesList($org_code, $search)
+# **invoicesGetInvoiceList**
+> \FomF\Ungerboeck\Client\Model\InvoicesModel invoicesGetInvoiceList($org_code, $search)
 
-Search for invoices using OData.
+Standard - Search for invoices using OData.
 
 ### Example
 ```php
@@ -76,13 +76,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\InvoicesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->invoicesGetInvoicesList($org_code, $search);
+    $result = $apiInstance->invoicesGetInvoiceList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling InvoicesApi->invoicesGetInvoicesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InvoicesApi->invoicesGetInvoiceList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -92,11 +92,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\InvoicesModel[]**](../Model/InvoicesModel.md)
+[**\FomF\Ungerboeck\Client\Model\InvoicesModel**](../Model/InvoicesModel.md)
 
 ### Authorization
 
@@ -109,10 +109,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **invoicesPutNotes**
-> \FomF\Ungerboeck\Client\Model\InvoicesModel invoicesPutNotes($org_code, $source, $invoice_number, $data)
+# **invoicesPutInvoice**
+> \FomF\Ungerboeck\Client\Model\InvoicesModel invoicesPutInvoice($org_code, $source, $invoice_number, $data)
 
-Edit an invoice
+Standard - Edit an invoice
 
 ### Example
 ```php
@@ -130,10 +130,10 @@ $invoice_number = 56; // int | The number of the invoice.
 $data = new \FomF\Ungerboeck\Client\Model\InvoicesModel(); // \FomF\Ungerboeck\Client\Model\InvoicesModel | (Include in the HTTP Body) An InvoicesModel to edit.
 
 try {
-    $result = $apiInstance->invoicesPutNotes($org_code, $source, $invoice_number, $data);
+    $result = $apiInstance->invoicesPutInvoice($org_code, $source, $invoice_number, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling InvoicesApi->invoicesPutNotes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InvoicesApi->invoicesPutInvoice: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

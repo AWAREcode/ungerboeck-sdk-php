@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**concessionsGetConcessions**](ConcessionsApi.md#concessionsGetConcessions) | **GET** /api/v1/Concessions/{OrgCode}/{SequenceNumber} | Get a concession by its parameters
-[**concessionsGetConcessionsList**](ConcessionsApi.md#concessionsGetConcessionsList) | **GET** /api/v1/Concessions/{OrgCode} | Search for concession using OData.
+[**concessionsGetConcession**](ConcessionsApi.md#concessionsGetConcession) | **GET** /api/v1/Concessions/{OrgCode}/{SequenceNumber} | Standard - Get a single concession by its parameters
+[**concessionsGetConcessionList**](ConcessionsApi.md#concessionsGetConcessionList) | **GET** /api/v1/Concessions/{OrgCode} | Standard - Search for concession using OData.
 
 
-# **concessionsGetConcessions**
-> \FomF\Ungerboeck\Client\Model\ConcessionsModel concessionsGetConcessions($org_code, $sequence_number)
+# **concessionsGetConcession**
+> \FomF\Ungerboeck\Client\Model\ConcessionsModel concessionsGetConcession($org_code, $sequence_number)
 
-Get a concession by its parameters
+Standard - Get a single concession by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the concess
 $sequence_number = 56; // int | The sequence number of the concession.
 
 try {
-    $result = $apiInstance->concessionsGetConcessions($org_code, $sequence_number);
+    $result = $apiInstance->concessionsGetConcession($org_code, $sequence_number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConcessionsApi->concessionsGetConcessions: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConcessionsApi->concessionsGetConcession: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **concessionsGetConcessionsList**
-> \FomF\Ungerboeck\Client\Model\ConcessionsModel[] concessionsGetConcessionsList($org_code, $search)
+# **concessionsGetConcessionList**
+> \FomF\Ungerboeck\Client\Model\ConcessionsModel concessionsGetConcessionList($org_code, $search)
 
-Search for concession using OData.
+Standard - Search for concession using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\ConcessionsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->concessionsGetConcessionsList($org_code, $search);
+    $result = $apiInstance->concessionsGetConcessionList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConcessionsApi->concessionsGetConcessionsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConcessionsApi->concessionsGetConcessionList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\ConcessionsModel[]**](../Model/ConcessionsModel.md)
+[**\FomF\Ungerboeck\Client\Model\ConcessionsModel**](../Model/ConcessionsModel.md)
 
 ### Authorization
 

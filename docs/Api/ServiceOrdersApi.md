@@ -4,19 +4,19 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceOrdersCompleteWorkOrders**](ServiceOrdersApi.md#serviceOrdersCompleteWorkOrders) | **PUT** /api/v1/ServiceOrders/{OrgCode}/{OrderNumber}/CompleteWorkOrders | Use this action endpoint to set all work orders on a service order to status Complete.  This process replicates the \&quot;Complete Work Orders\&quot; functionality found in v20&#39;s \&quot;Service Orders\&quot; window.
-[**serviceOrdersGetServiceOrder**](ServiceOrdersApi.md#serviceOrdersGetServiceOrder) | **GET** /api/v1/ServiceOrders/{OrgCode}/{OrderNumber} | Get a Service order by its parameters
-[**serviceOrdersGetServiceOrdersList**](ServiceOrdersApi.md#serviceOrdersGetServiceOrdersList) | **GET** /api/v1/ServiceOrders/{OrgCode} | Search for Service orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
-[**serviceOrdersMoveOrder**](ServiceOrdersApi.md#serviceOrdersMoveOrder) | **PUT** /api/v1/ServiceOrders/MoveOrder | Use this action endpoint to move Service Orders to a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Service Orders\&quot; window.
-[**serviceOrdersMoveOrdersBulk**](ServiceOrdersApi.md#serviceOrdersMoveOrdersBulk) | **PUT** /api/v1/ServiceOrders/MoveOrdersBulk | Use this action endpoint to move multiple Service Orders to a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Service Orders\&quot; window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
-[**serviceOrdersPostServiceOrder**](ServiceOrdersApi.md#serviceOrdersPostServiceOrder) | **POST** /api/v1/ServiceOrders | Add a Service order
-[**serviceOrdersPutServiceOrder**](ServiceOrdersApi.md#serviceOrdersPutServiceOrder) | **PUT** /api/v1/ServiceOrders/{OrgCode}/{OrderNumber} | Edit a Service order
+[**serviceOrdersCompleteWorkOrders**](ServiceOrdersApi.md#serviceOrdersCompleteWorkOrders) | **PUT** /api/v1/ServiceOrders/{OrgCode}/{OrderNumber}/CompleteWorkOrders | Extended (Service Orders) - Use this action endpoint to set all work orders on a service order to status Complete.  This process replicates the \&quot;Complete Work Orders\&quot; functionality found in v20&#39;s \&quot;Service Orders\&quot; window.
+[**serviceOrdersGetServiceOrder**](ServiceOrdersApi.md#serviceOrdersGetServiceOrder) | **GET** /api/v1/ServiceOrders/{OrgCode}/{OrderNumber} | Standard - Get a single Service order by its parameters
+[**serviceOrdersGetServiceOrderList**](ServiceOrdersApi.md#serviceOrdersGetServiceOrderList) | **GET** /api/v1/ServiceOrders/{OrgCode} | Standard - Search for Service orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+[**serviceOrdersMoveOrder**](ServiceOrdersApi.md#serviceOrdersMoveOrder) | **PUT** /api/v1/ServiceOrders/MoveOrder | Extended (Service Orders) - Use this action endpoint to move Service Orders to a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Service Orders\&quot; window.
+[**serviceOrdersMoveOrdersBulk**](ServiceOrdersApi.md#serviceOrdersMoveOrdersBulk) | **PUT** /api/v1/ServiceOrders/MoveOrdersBulk | Extended (Service Orders) - Use this action endpoint to move multiple Service Orders to a different event or a different function on the same event.  This process replicates the \&quot;Move Order\&quot; functionality found in Ungerboeck&#39;s \&quot;Service Orders\&quot; window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
+[**serviceOrdersPostServiceOrder**](ServiceOrdersApi.md#serviceOrdersPostServiceOrder) | **POST** /api/v1/ServiceOrders | Extended (Service Orders) - Add a Service order
+[**serviceOrdersPutServiceOrder**](ServiceOrdersApi.md#serviceOrdersPutServiceOrder) | **PUT** /api/v1/ServiceOrders/{OrgCode}/{OrderNumber} | Extended (Service Orders) - Edit a Service order
 
 
 # **serviceOrdersCompleteWorkOrders**
 > object serviceOrdersCompleteWorkOrders($org_code, $order_number)
 
-Use this action endpoint to set all work orders on a service order to status Complete.  This process replicates the \"Complete Work Orders\" functionality found in v20's \"Service Orders\" window.
+Extended (Service Orders) - Use this action endpoint to set all work orders on a service order to status Complete.  This process replicates the \"Complete Work Orders\" functionality found in v20's \"Service Orders\" window.
 
 ### Example
 ```php
@@ -65,7 +65,7 @@ No authorization required
 # **serviceOrdersGetServiceOrder**
 > \FomF\Ungerboeck\Client\Model\ServiceOrdersModel serviceOrdersGetServiceOrder($org_code, $order_number)
 
-Get a Service order by its parameters
+Standard - Get a single Service order by its parameters
 
 ### Example
 ```php
@@ -111,10 +111,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **serviceOrdersGetServiceOrdersList**
-> \FomF\Ungerboeck\Client\Model\ServiceOrdersModel[] serviceOrdersGetServiceOrdersList($org_code, $search)
+# **serviceOrdersGetServiceOrderList**
+> \FomF\Ungerboeck\Client\Model\ServiceOrdersModel serviceOrdersGetServiceOrderList($org_code, $search)
 
-Search for Service orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
+Standard - Search for Service orders using OData.  Note, this will not return user fields.  Use the single GET endpoint to retrieve user fields.
 
 ### Example
 ```php
@@ -127,13 +127,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\ServiceOrdersApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->serviceOrdersGetServiceOrdersList($org_code, $search);
+    $result = $apiInstance->serviceOrdersGetServiceOrderList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceOrdersApi->serviceOrdersGetServiceOrdersList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceOrdersApi->serviceOrdersGetServiceOrderList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -143,11 +143,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\ServiceOrdersModel[]**](../Model/ServiceOrdersModel.md)
+[**\FomF\Ungerboeck\Client\Model\ServiceOrdersModel**](../Model/ServiceOrdersModel.md)
 
 ### Authorization
 
@@ -161,9 +161,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **serviceOrdersMoveOrder**
-> object serviceOrdersMoveOrder($data)
+> serviceOrdersMoveOrder($data)
 
-Use this action endpoint to move Service Orders to a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Service Orders\" window.
+Extended (Service Orders) - Use this action endpoint to move Service Orders to a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Service Orders\" window.
 
 ### Example
 ```php
@@ -178,8 +178,7 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\ServiceOrdersApi(
 $data = new \FomF\Ungerboeck\Client\Model\MoveOrderModel(); // \FomF\Ungerboeck\Client\Model\MoveOrderModel | (Include in the HTTP Body) A MoveOrderModel entry.
 
 try {
-    $result = $apiInstance->serviceOrdersMoveOrder($data);
-    print_r($result);
+    $apiInstance->serviceOrdersMoveOrder($data);
 } catch (Exception $e) {
     echo 'Exception when calling ServiceOrdersApi->serviceOrdersMoveOrder: ', $e->getMessage(), PHP_EOL;
 }
@@ -194,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+void (empty response body)
 
 ### Authorization
 
@@ -208,9 +207,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **serviceOrdersMoveOrdersBulk**
-> \FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel[] serviceOrdersMoveOrdersBulk($data)
+> \FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel serviceOrdersMoveOrdersBulk($data)
 
-Use this action endpoint to move multiple Service Orders to a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Service Orders\" window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
+Extended (Service Orders) - Use this action endpoint to move multiple Service Orders to a different event or a different function on the same event.  This process replicates the \"Move Order\" functionality found in Ungerboeck's \"Service Orders\" window.  If one or more orders fails to move, this endpoint will return a MoveOrdersBulkErrorsModel object.
 
 ### Example
 ```php
@@ -241,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel[]**](../Model/MoveOrdersBulkErrorsModel.md)
+[**\FomF\Ungerboeck\Client\Model\MoveOrdersBulkErrorsModel**](../Model/MoveOrdersBulkErrorsModel.md)
 
 ### Authorization
 
@@ -257,7 +256,7 @@ No authorization required
 # **serviceOrdersPostServiceOrder**
 > \FomF\Ungerboeck\Client\Model\ServiceOrdersModel serviceOrdersPostServiceOrder($data)
 
-Add a Service order
+Extended (Service Orders) - Add a Service order
 
 ### Example
 ```php
@@ -304,7 +303,7 @@ No authorization required
 # **serviceOrdersPutServiceOrder**
 > \FomF\Ungerboeck\Client\Model\ServiceOrdersModel serviceOrdersPutServiceOrder($org_code, $order_number, $data)
 
-Edit a Service order
+Extended (Service Orders) - Edit a Service order
 
 ### Example
 ```php

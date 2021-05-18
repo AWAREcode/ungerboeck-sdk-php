@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serviceOrderItemsDeleteServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsDeleteServiceOrderItem) | **DELETE** /api/v1/ServiceOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Delete a order item from an order
-[**serviceOrderItemsGetServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsGetServiceOrderItem) | **GET** /api/v1/ServiceOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Get a Service order item by its parameters
-[**serviceOrderItemsGetServiceOrderItemsList**](ServiceOrderItemsApi.md#serviceOrderItemsGetServiceOrderItemsList) | **GET** /api/v1/ServiceOrderItems/{OrgCode} | Search for Service order items using OData.
-[**serviceOrderItemsPostServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsPostServiceOrderItem) | **POST** /api/v1/ServiceOrderItems | Add an item to an existing Service order
-[**serviceOrderItemsPutServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsPutServiceOrderItem) | **PUT** /api/v1/ServiceOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Edit a item on a Service order
+[**serviceOrderItemsDeleteServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsDeleteServiceOrderItem) | **DELETE** /api/v1/ServiceOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Extended (Service Orders) - Delete a order item from an order
+[**serviceOrderItemsGetServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsGetServiceOrderItem) | **GET** /api/v1/ServiceOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Standard - Get a single service order item by its parameters
+[**serviceOrderItemsGetServiceOrderItemList**](ServiceOrderItemsApi.md#serviceOrderItemsGetServiceOrderItemList) | **GET** /api/v1/ServiceOrderItems/{OrgCode} | Standard - Search for Service order items using OData.
+[**serviceOrderItemsPostServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsPostServiceOrderItem) | **POST** /api/v1/ServiceOrderItems | Extended (Service Orders) - Add an item to an existing Service order
+[**serviceOrderItemsPutServiceOrderItem**](ServiceOrderItemsApi.md#serviceOrderItemsPutServiceOrderItem) | **PUT** /api/v1/ServiceOrderItems/{OrgCode}/{OrderNumber}/{OrderLineNumber} | Extended (Service Orders) - Edit a item on a Service order
 
 
 # **serviceOrderItemsDeleteServiceOrderItem**
 > serviceOrderItemsDeleteServiceOrderItem($org_code, $order_number, $order_line_number)
 
-Delete a order item from an order
+Extended (Service Orders) - Delete a order item from an order
 
 ### Example
 ```php
@@ -64,7 +64,7 @@ No authorization required
 # **serviceOrderItemsGetServiceOrderItem**
 > \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel serviceOrderItemsGetServiceOrderItem($org_code, $order_number, $order_line_number)
 
-Get a Service order item by its parameters
+Standard - Get a single service order item by its parameters
 
 ### Example
 ```php
@@ -112,10 +112,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **serviceOrderItemsGetServiceOrderItemsList**
-> \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel[] serviceOrderItemsGetServiceOrderItemsList($org_code, $search)
+# **serviceOrderItemsGetServiceOrderItemList**
+> \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel serviceOrderItemsGetServiceOrderItemList($org_code, $search)
 
-Search for Service order items using OData.
+Standard - Search for Service order items using OData.
 
 ### Example
 ```php
@@ -128,13 +128,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\ServiceOrderItemsApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->serviceOrderItemsGetServiceOrderItemsList($org_code, $search);
+    $result = $apiInstance->serviceOrderItemsGetServiceOrderItemList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceOrderItemsApi->serviceOrderItemsGetServiceOrderItemsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServiceOrderItemsApi->serviceOrderItemsGetServiceOrderItemList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -144,11 +144,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel[]**](../Model/ServiceOrderItemsModel.md)
+[**\FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel**](../Model/ServiceOrderItemsModel.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ No authorization required
 # **serviceOrderItemsPostServiceOrderItem**
 > \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel serviceOrderItemsPostServiceOrderItem($data)
 
-Add an item to an existing Service order
+Extended (Service Orders) - Add an item to an existing Service order
 
 ### Example
 ```php
@@ -211,7 +211,7 @@ No authorization required
 # **serviceOrderItemsPutServiceOrderItem**
 > \FomF\Ungerboeck\Client\Model\ServiceOrderItemsModel serviceOrderItemsPutServiceOrderItem($org_code, $order_number, $order_line_number, $data)
 
-Edit a item on a Service order
+Extended (Service Orders) - Edit a item on a Service order
 
 ### Example
 ```php

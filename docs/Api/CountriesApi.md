@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**countriesGetCountries**](CountriesApi.md#countriesGetCountries) | **GET** /api/v1/Countries/{OrgCode}/{Code} | Get an country by its parameters
-[**countriesGetCountriesList**](CountriesApi.md#countriesGetCountriesList) | **GET** /api/v1/Countries/{OrgCode} | Search for countries using OData.
+[**countriesGetCountry**](CountriesApi.md#countriesGetCountry) | **GET** /api/v1/Countries/{OrgCode}/{Code} | Basic - Get a single country by its parameters
+[**countriesGetCountryList**](CountriesApi.md#countriesGetCountryList) | **GET** /api/v1/Countries/{OrgCode} | Basic - Search for countries using OData.
 
 
-# **countriesGetCountries**
-> \FomF\Ungerboeck\Client\Model\CountriesModel countriesGetCountries($org_code, $code)
+# **countriesGetCountry**
+> \FomF\Ungerboeck\Client\Model\CountriesModel countriesGetCountry($org_code, $code)
 
-Get an country by its parameters
+Basic - Get a single country by its parameters
 
 ### Example
 ```php
@@ -24,13 +24,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\CountriesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code of the country.
-$code = "code_example"; // string | The code of the country.
+$code = "code_example"; // string | The code of the country.  Note that since the '\\*' character is one of the reserved characters for a URL, the default code (\\*\\*\\*) can't be used here.  Instead, use it as a query string parameter: \".../api/v1/countries/10?code=***\"
 
 try {
-    $result = $apiInstance->countriesGetCountries($org_code, $code);
+    $result = $apiInstance->countriesGetCountry($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CountriesApi->countriesGetCountries: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CountriesApi->countriesGetCountry: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code of the country. |
- **code** | **string**| The code of the country. |
+ **code** | **string**| The code of the country.  Note that since the &#39;\\*&#39; character is one of the reserved characters for a URL, the default code (\\*\\*\\*) can&#39;t be used here.  Instead, use it as a query string parameter: \&quot;.../api/v1/countries/10?code&#x3D;***\&quot; |
 
 ### Return type
 
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **countriesGetCountriesList**
-> \FomF\Ungerboeck\Client\Model\CountriesModel[] countriesGetCountriesList($org_code, $search)
+# **countriesGetCountryList**
+> \FomF\Ungerboeck\Client\Model\CountriesModel countriesGetCountryList($org_code, $search)
 
-Search for countries using OData.
+Basic - Search for countries using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\CountriesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->countriesGetCountriesList($org_code, $search);
+    $result = $apiInstance->countriesGetCountryList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CountriesApi->countriesGetCountriesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CountriesApi->countriesGetCountryList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\CountriesModel[]**](../Model/CountriesModel.md)
+[**\FomF\Ungerboeck\Client\Model\CountriesModel**](../Model/CountriesModel.md)
 
 ### Authorization
 

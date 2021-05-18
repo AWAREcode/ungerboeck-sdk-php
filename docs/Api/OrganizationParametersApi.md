@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**organizationParametersGetOrganizationParameters**](OrganizationParametersApi.md#organizationParametersGetOrganizationParameters) | **GET** /api/v1/OrganizationParameters/{OrgCode}/{ApplicationCode}/{ParameterCode} | Get an organization parameter by its parameters
-[**organizationParametersGetOrganizationParametersList**](OrganizationParametersApi.md#organizationParametersGetOrganizationParametersList) | **GET** /api/v1/OrganizationParameters/{OrgCode} | Search for organization parameters using OData.
+[**organizationParametersGetOrganizationParameter**](OrganizationParametersApi.md#organizationParametersGetOrganizationParameter) | **GET** /api/v1/OrganizationParameters/{OrgCode}/{ApplicationCode}/{ParameterCode} | Standard - Get a single organization parameter by its parameters
+[**organizationParametersGetOrganizationParameterList**](OrganizationParametersApi.md#organizationParametersGetOrganizationParameterList) | **GET** /api/v1/OrganizationParameters/{OrgCode} | Standard - Search for organization parameters using OData.
 
 
-# **organizationParametersGetOrganizationParameters**
-> \FomF\Ungerboeck\Client\Model\OrganizationParametersModel organizationParametersGetOrganizationParameters($org_code, $application_code, $parameter_code)
+# **organizationParametersGetOrganizationParameter**
+> \FomF\Ungerboeck\Client\Model\OrganizationParametersModel organizationParametersGetOrganizationParameter($org_code, $application_code, $parameter_code)
 
-Get an organization parameter by its parameters
+Standard - Get a single organization parameter by its parameters
 
 ### Example
 ```php
@@ -28,10 +28,10 @@ $application_code = "application_code_example"; // string | The application code
 $parameter_code = "parameter_code_example"; // string | The parameter code of the organization parameter.
 
 try {
-    $result = $apiInstance->organizationParametersGetOrganizationParameters($org_code, $application_code, $parameter_code);
+    $result = $apiInstance->organizationParametersGetOrganizationParameter($org_code, $application_code, $parameter_code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationParametersApi->organizationParametersGetOrganizationParameters: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationParametersApi->organizationParametersGetOrganizationParameter: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -59,10 +59,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **organizationParametersGetOrganizationParametersList**
-> \FomF\Ungerboeck\Client\Model\OrganizationParametersModel[] organizationParametersGetOrganizationParametersList($org_code, $search)
+# **organizationParametersGetOrganizationParameterList**
+> \FomF\Ungerboeck\Client\Model\OrganizationParametersModel organizationParametersGetOrganizationParameterList($org_code, $search)
 
-Search for organization parameters using OData.
+Standard - Search for organization parameters using OData.
 
 ### Example
 ```php
@@ -75,13 +75,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\OrganizationParametersApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->organizationParametersGetOrganizationParametersList($org_code, $search);
+    $result = $apiInstance->organizationParametersGetOrganizationParameterList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationParametersApi->organizationParametersGetOrganizationParametersList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationParametersApi->organizationParametersGetOrganizationParameterList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\OrganizationParametersModel[]**](../Model/OrganizationParametersModel.md)
+[**\FomF\Ungerboeck\Client\Model\OrganizationParametersModel**](../Model/OrganizationParametersModel.md)
 
 ### Authorization
 

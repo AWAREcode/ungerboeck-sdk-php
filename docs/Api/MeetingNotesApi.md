@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**meetingNotesGetMeetingNotes**](MeetingNotesApi.md#meetingNotesGetMeetingNotes) | **GET** /api/v1/MeetingNotes/{OrgCode}/{BulletinApplication}/{Meeting}/{BulletinSeqNbr}/{SequenceNbr} | Get a meeting note by its parameters
-[**meetingNotesGetMeetingNotesList**](MeetingNotesApi.md#meetingNotesGetMeetingNotesList) | **GET** /api/v1/MeetingNotes/{OrgCode} | Search for meeting note using OData.
+[**meetingNotesGetMeetingNote**](MeetingNotesApi.md#meetingNotesGetMeetingNote) | **GET** /api/v1/MeetingNotes/{OrgCode}/{BulletinApplication}/{Meeting}/{BulletinSeqNbr}/{SequenceNbr} | Standard - Get a single meeting note by its parameters
+[**meetingNotesGetMeetingNoteList**](MeetingNotesApi.md#meetingNotesGetMeetingNoteList) | **GET** /api/v1/MeetingNotes/{OrgCode} | Standard - Search for meeting note using OData.
 
 
-# **meetingNotesGetMeetingNotes**
-> \FomF\Ungerboeck\Client\Model\MeetingNotesModel meetingNotesGetMeetingNotes($org_code, $bulletin_application, $meeting, $bulletin_seq_nbr, $sequence_nbr)
+# **meetingNotesGetMeetingNote**
+> \FomF\Ungerboeck\Client\Model\MeetingNotesModel meetingNotesGetMeetingNote($org_code, $bulletin_application, $meeting, $bulletin_seq_nbr, $sequence_nbr)
 
-Get a meeting note by its parameters
+Standard - Get a single meeting note by its parameters
 
 ### Example
 ```php
@@ -30,10 +30,10 @@ $bulletin_seq_nbr = 56; // int | The bulletin sequence number of the meeting not
 $sequence_nbr = 56; // int | The sequence number of the meeting note.
 
 try {
-    $result = $apiInstance->meetingNotesGetMeetingNotes($org_code, $bulletin_application, $meeting, $bulletin_seq_nbr, $sequence_nbr);
+    $result = $apiInstance->meetingNotesGetMeetingNote($org_code, $bulletin_application, $meeting, $bulletin_seq_nbr, $sequence_nbr);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MeetingNotesApi->meetingNotesGetMeetingNotes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MeetingNotesApi->meetingNotesGetMeetingNote: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -63,10 +63,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **meetingNotesGetMeetingNotesList**
-> \FomF\Ungerboeck\Client\Model\MeetingNotesModel[] meetingNotesGetMeetingNotesList($org_code, $search)
+# **meetingNotesGetMeetingNoteList**
+> \FomF\Ungerboeck\Client\Model\MeetingNotesModel meetingNotesGetMeetingNoteList($org_code, $search)
 
-Search for meeting note using OData.
+Standard - Search for meeting note using OData.
 
 ### Example
 ```php
@@ -79,13 +79,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\MeetingNotesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->meetingNotesGetMeetingNotesList($org_code, $search);
+    $result = $apiInstance->meetingNotesGetMeetingNoteList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MeetingNotesApi->meetingNotesGetMeetingNotesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MeetingNotesApi->meetingNotesGetMeetingNoteList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -95,11 +95,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\MeetingNotesModel[]**](../Model/MeetingNotesModel.md)
+[**\FomF\Ungerboeck\Client\Model\MeetingNotesModel**](../Model/MeetingNotesModel.md)
 
 ### Authorization
 

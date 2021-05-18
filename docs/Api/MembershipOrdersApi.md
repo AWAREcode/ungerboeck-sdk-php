@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**membershipOrdersGetMembershipOrder**](MembershipOrdersApi.md#membershipOrdersGetMembershipOrder) | **GET** /api/v1/MembershipOrders/{OrgCode}/{OrderNumber} | Get a membership order by its parameters
-[**membershipOrdersGetMembershipOrdersList**](MembershipOrdersApi.md#membershipOrdersGetMembershipOrdersList) | **GET** /api/v1/MembershipOrders/{OrgCode} | Search for membership orders using OData.
-[**membershipOrdersPostMembershipOrder**](MembershipOrdersApi.md#membershipOrdersPostMembershipOrder) | **POST** /api/v1/MembershipOrders | Add a membership order
-[**membershipOrdersPrepareMembershipOrderForInvoicing**](MembershipOrdersApi.md#membershipOrdersPrepareMembershipOrderForInvoicing) | **PUT** /api/v1/MembershipOrders/{OrgCode}/{OrderNumber}/PrepareMembershipOrderForInvoicing | Use this action endpoint to prepare a membership order for invoicing.  This process replicates the \&quot;Prepare Order\&quot; functionality found in v20&#39;s \&quot;Prepare Membership Orders For Invoicing\&quot; window.
-[**membershipOrdersPutMembershipOrder**](MembershipOrdersApi.md#membershipOrdersPutMembershipOrder) | **PUT** /api/v1/MembershipOrders/{OrgCode}/{OrderNumber} | Edit a membership order
+[**membershipOrdersGetMembershipOrder**](MembershipOrdersApi.md#membershipOrdersGetMembershipOrder) | **GET** /api/v1/MembershipOrders/{OrgCode}/{OrderNumber} | Standard - Get a single membership order by its parameters
+[**membershipOrdersGetMembershipOrderList**](MembershipOrdersApi.md#membershipOrdersGetMembershipOrderList) | **GET** /api/v1/MembershipOrders/{OrgCode} | Standard - Search for membership orders using OData.
+[**membershipOrdersPostMembershipOrder**](MembershipOrdersApi.md#membershipOrdersPostMembershipOrder) | **POST** /api/v1/MembershipOrders | Extended (Membership Orders) - Add a membership order
+[**membershipOrdersPrepareMembershipOrderForInvoicing**](MembershipOrdersApi.md#membershipOrdersPrepareMembershipOrderForInvoicing) | **PUT** /api/v1/MembershipOrders/{OrgCode}/{OrderNumber}/PrepareMembershipOrderForInvoicing | Extended (Membership Orders) - Use this action endpoint to prepare a membership order for invoicing.  This process replicates the \&quot;Prepare Order\&quot; functionality found in v20&#39;s \&quot;Prepare Membership Orders For Invoicing\&quot; window.  The response content contains the newly created Membership Order number (type MB).
+[**membershipOrdersPutMembershipOrder**](MembershipOrdersApi.md#membershipOrdersPutMembershipOrder) | **PUT** /api/v1/MembershipOrders/{OrgCode}/{OrderNumber} | Extended (Membership Orders) - Edit a membership order
 
 
 # **membershipOrdersGetMembershipOrder**
 > \FomF\Ungerboeck\Client\Model\MembershipOrdersModel membershipOrdersGetMembershipOrder($org_code, $order_number)
 
-Get a membership order by its parameters
+Standard - Get a single membership order by its parameters
 
 ### Example
 ```php
@@ -60,10 +60,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **membershipOrdersGetMembershipOrdersList**
-> \FomF\Ungerboeck\Client\Model\MembershipOrdersModel[] membershipOrdersGetMembershipOrdersList($org_code, $search)
+# **membershipOrdersGetMembershipOrderList**
+> \FomF\Ungerboeck\Client\Model\MembershipOrdersModel membershipOrdersGetMembershipOrderList($org_code, $search)
 
-Search for membership orders using OData.
+Standard - Search for membership orders using OData.
 
 ### Example
 ```php
@@ -76,13 +76,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\MembershipOrdersApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->membershipOrdersGetMembershipOrdersList($org_code, $search);
+    $result = $apiInstance->membershipOrdersGetMembershipOrderList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MembershipOrdersApi->membershipOrdersGetMembershipOrdersList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MembershipOrdersApi->membershipOrdersGetMembershipOrderList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -92,11 +92,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\MembershipOrdersModel[]**](../Model/MembershipOrdersModel.md)
+[**\FomF\Ungerboeck\Client\Model\MembershipOrdersModel**](../Model/MembershipOrdersModel.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ No authorization required
 # **membershipOrdersPostMembershipOrder**
 > \FomF\Ungerboeck\Client\Model\MembershipOrdersModel membershipOrdersPostMembershipOrder($data)
 
-Add a membership order
+Extended (Membership Orders) - Add a membership order
 
 ### Example
 ```php
@@ -159,7 +159,7 @@ No authorization required
 # **membershipOrdersPrepareMembershipOrderForInvoicing**
 > object membershipOrdersPrepareMembershipOrderForInvoicing($org_code, $order_number)
 
-Use this action endpoint to prepare a membership order for invoicing.  This process replicates the \"Prepare Order\" functionality found in v20's \"Prepare Membership Orders For Invoicing\" window.
+Extended (Membership Orders) - Use this action endpoint to prepare a membership order for invoicing.  This process replicates the \"Prepare Order\" functionality found in v20's \"Prepare Membership Orders For Invoicing\" window.  The response content contains the newly created Membership Order number (type MB).
 
 ### Example
 ```php
@@ -208,7 +208,7 @@ No authorization required
 # **membershipOrdersPutMembershipOrder**
 > \FomF\Ungerboeck\Client\Model\MembershipOrdersModel membershipOrdersPutMembershipOrder($org_code, $order_number, $data)
 
-Edit a membership order
+Extended (Membership Orders) - Edit a membership order
 
 ### Example
 ```php

@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountsReceivableVouchersGetAccountsReceivableVouchers**](AccountsReceivableVouchersApi.md#accountsReceivableVouchersGetAccountsReceivableVouchers) | **GET** /api/v1/AccountsReceivableVouchers/{OrgCode}/{VoucherSequence} | Get a accounts receivable voucher by its parameters
-[**accountsReceivableVouchersGetAccountsReceivableVouchersList**](AccountsReceivableVouchersApi.md#accountsReceivableVouchersGetAccountsReceivableVouchersList) | **GET** /api/v1/AccountsReceivableVouchers/{OrgCode} | Search for accounts receivable vouchers using OData.
+[**accountsReceivableVouchersGetAccountsReceivableVoucher**](AccountsReceivableVouchersApi.md#accountsReceivableVouchersGetAccountsReceivableVoucher) | **GET** /api/v1/AccountsReceivableVouchers/{OrgCode}/{VoucherSequence} | Standard - Get a single accounts receivable voucher by its parameters
+[**accountsReceivableVouchersGetAccountsReceivableVoucherList**](AccountsReceivableVouchersApi.md#accountsReceivableVouchersGetAccountsReceivableVoucherList) | **GET** /api/v1/AccountsReceivableVouchers/{OrgCode} | Standard - Search for accounts receivable vouchers using OData.
 
 
-# **accountsReceivableVouchersGetAccountsReceivableVouchers**
-> \FomF\Ungerboeck\Client\Model\AccountsReceivableVouchersModel accountsReceivableVouchersGetAccountsReceivableVouchers($org_code, $voucher_sequence)
+# **accountsReceivableVouchersGetAccountsReceivableVoucher**
+> \FomF\Ungerboeck\Client\Model\AccountsReceivableVouchersModel accountsReceivableVouchersGetAccountsReceivableVoucher($org_code, $voucher_sequence)
 
-Get a accounts receivable voucher by its parameters
+Standard - Get a single accounts receivable voucher by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the account
 $voucher_sequence = 56; // int | The voucher sequence of the accounts receivable voucher.
 
 try {
-    $result = $apiInstance->accountsReceivableVouchersGetAccountsReceivableVouchers($org_code, $voucher_sequence);
+    $result = $apiInstance->accountsReceivableVouchersGetAccountsReceivableVoucher($org_code, $voucher_sequence);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsReceivableVouchersApi->accountsReceivableVouchersGetAccountsReceivableVouchers: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsReceivableVouchersApi->accountsReceivableVouchersGetAccountsReceivableVoucher: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **accountsReceivableVouchersGetAccountsReceivableVouchersList**
-> \FomF\Ungerboeck\Client\Model\AccountsReceivableVouchersModel[] accountsReceivableVouchersGetAccountsReceivableVouchersList($org_code, $search)
+# **accountsReceivableVouchersGetAccountsReceivableVoucherList**
+> \FomF\Ungerboeck\Client\Model\AccountsReceivableVouchersModel accountsReceivableVouchersGetAccountsReceivableVoucherList($org_code, $search)
 
-Search for accounts receivable vouchers using OData.
+Standard - Search for accounts receivable vouchers using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\AccountsReceivableVouchersApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->accountsReceivableVouchersGetAccountsReceivableVouchersList($org_code, $search);
+    $result = $apiInstance->accountsReceivableVouchersGetAccountsReceivableVoucherList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsReceivableVouchersApi->accountsReceivableVouchersGetAccountsReceivableVouchersList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsReceivableVouchersApi->accountsReceivableVouchersGetAccountsReceivableVoucherList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\AccountsReceivableVouchersModel[]**](../Model/AccountsReceivableVouchersModel.md)
+[**\FomF\Ungerboeck\Client\Model\AccountsReceivableVouchersModel**](../Model/AccountsReceivableVouchersModel.md)
 
 ### Authorization
 

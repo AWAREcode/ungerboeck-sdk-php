@@ -4,14 +4,14 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventJobClassesGetEventJobClasses**](EventJobClassesApi.md#eventJobClassesGetEventJobClasses) | **GET** /api/v1/EventJobClasses/{OrgCode}/{Code} | Get an event class by its parameters
-[**eventJobClassesGetEventJobClassesList**](EventJobClassesApi.md#eventJobClassesGetEventJobClassesList) | **GET** /api/v1/EventJobClasses/{OrgCode} | Search for event class using OData.
+[**eventJobClassesGetEventJobClass**](EventJobClassesApi.md#eventJobClassesGetEventJobClass) | **GET** /api/v1/EventJobClasses/{OrgCode}/{Code} | Basic - Get a single event class by its parameters
+[**eventJobClassesGetEventJobClassList**](EventJobClassesApi.md#eventJobClassesGetEventJobClassList) | **GET** /api/v1/EventJobClasses/{OrgCode} | Basic - Search for event class using OData.
 
 
-# **eventJobClassesGetEventJobClasses**
-> \FomF\Ungerboeck\Client\Model\EventJobClassesModel eventJobClassesGetEventJobClasses($org_code, $code)
+# **eventJobClassesGetEventJobClass**
+> \FomF\Ungerboeck\Client\Model\EventJobClassesModel eventJobClassesGetEventJobClass($org_code, $code)
 
-Get an event class by its parameters
+Basic - Get a single event class by its parameters
 
 ### Example
 ```php
@@ -27,10 +27,10 @@ $org_code = "org_code_example"; // string | The organization code of the event c
 $code = "code_example"; // string | The code of the event class.
 
 try {
-    $result = $apiInstance->eventJobClassesGetEventJobClasses($org_code, $code);
+    $result = $apiInstance->eventJobClassesGetEventJobClass($org_code, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventJobClassesApi->eventJobClassesGetEventJobClasses: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventJobClassesApi->eventJobClassesGetEventJobClass: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,10 +57,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **eventJobClassesGetEventJobClassesList**
-> \FomF\Ungerboeck\Client\Model\EventJobClassesModel[] eventJobClassesGetEventJobClassesList($org_code, $search)
+# **eventJobClassesGetEventJobClassList**
+> \FomF\Ungerboeck\Client\Model\EventJobClassesModel eventJobClassesGetEventJobClassList($org_code, $search)
 
-Search for event class using OData.
+Basic - Search for event class using OData.
 
 ### Example
 ```php
@@ -73,13 +73,13 @@ $apiInstance = new FomF\Ungerboeck\Client\Api\EventJobClassesApi(
     new GuzzleHttp\Client()
 );
 $org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
 
 try {
-    $result = $apiInstance->eventJobClassesGetEventJobClassesList($org_code, $search);
+    $result = $apiInstance->eventJobClassesGetEventJobClassList($org_code, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventJobClassesApi->eventJobClassesGetEventJobClassesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EventJobClassesApi->eventJobClassesGetEventJobClassList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
 
 ### Return type
 
-[**\FomF\Ungerboeck\Client\Model\EventJobClassesModel[]**](../Model/EventJobClassesModel.md)
+[**\FomF\Ungerboeck\Client\Model\EventJobClassesModel**](../Model/EventJobClassesModel.md)
 
 ### Authorization
 

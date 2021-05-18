@@ -4,17 +4,17 @@ All URIs are relative to *https://fomf.ungerboeck.com/TEST*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activitiesDeleteActivity**](ActivitiesApi.md#activitiesDeleteActivity) | **DELETE** /api/v1/Activities/{OrgCode}/{AccountCode}/{SequenceNumber} | Delete an activity
-[**activitiesGetActivitiesList**](ActivitiesApi.md#activitiesGetActivitiesList) | **GET** /api/v1/Activities/{OrgCode} | Search for activities using OData.
-[**activitiesGetActivity**](ActivitiesApi.md#activitiesGetActivity) | **GET** /api/v1/Activities/{OrgCode}/{AccountCode}/{SequenceNumber} | Get an activity by its parameters
-[**activitiesPostActivity**](ActivitiesApi.md#activitiesPostActivity) | **POST** /api/v1/Activities | Add an activity
-[**activitiesPutActivity**](ActivitiesApi.md#activitiesPutActivity) | **PUT** /api/v1/Activities/{OrgCode}/{AccountCode}/{SequenceNumber} | Edit an activity
+[**activitiesDeleteActivity**](ActivitiesApi.md#activitiesDeleteActivity) | **DELETE** /api/v1/Activities/{OrgCode}/{AccountCode}/{SequenceNumber} | Basic - Delete an activity
+[**activitiesGetActivity**](ActivitiesApi.md#activitiesGetActivity) | **GET** /api/v1/Activities/{OrgCode}/{AccountCode}/{SequenceNumber} | Basic - Get a single activity by its parameters
+[**activitiesGetActivityList**](ActivitiesApi.md#activitiesGetActivityList) | **GET** /api/v1/Activities/{OrgCode} | Basic - Search for activities using OData.
+[**activitiesPostActivity**](ActivitiesApi.md#activitiesPostActivity) | **POST** /api/v1/Activities | Basic - Add an activity
+[**activitiesPutActivity**](ActivitiesApi.md#activitiesPutActivity) | **PUT** /api/v1/Activities/{OrgCode}/{AccountCode}/{SequenceNumber} | Basic - Edit an activity
 
 
 # **activitiesDeleteActivity**
 > activitiesDeleteActivity($org_code, $account_code, $sequence_number)
 
-Delete an activity
+Basic - Delete an activity
 
 ### Example
 ```php
@@ -61,59 +61,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **activitiesGetActivitiesList**
-> \FomF\Ungerboeck\Client\Model\ActivitiesModel[] activitiesGetActivitiesList($org_code, $search)
-
-Search for activities using OData.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new FomF\Ungerboeck\Client\Api\ActivitiesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$org_code = "org_code_example"; // string | The organization code in which the search will take place
-$search = "search_example"; // string | Search string using OData with model properties for the filter, Page and Page_Size to navigate
-
-try {
-    $result = $apiInstance->activitiesGetActivitiesList($org_code, $search);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ActivitiesApi->activitiesGetActivitiesList: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_code** | **string**| The organization code in which the search will take place |
- **search** | **string**| Search string using OData with model properties for the filter, Page and Page_Size to navigate |
-
-### Return type
-
-[**\FomF\Ungerboeck\Client\Model\ActivitiesModel[]**](../Model/ActivitiesModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **activitiesGetActivity**
 > \FomF\Ungerboeck\Client\Model\ActivitiesModel activitiesGetActivity($org_code, $account_code, $sequence_number)
 
-Get an activity by its parameters
+Basic - Get a single activity by its parameters
 
 ### Example
 ```php
@@ -161,10 +112,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **activitiesGetActivityList**
+> \FomF\Ungerboeck\Client\Model\ActivitiesModel activitiesGetActivityList($org_code, $search)
+
+Basic - Search for activities using OData.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new FomF\Ungerboeck\Client\Api\ActivitiesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$org_code = "org_code_example"; // string | The organization code in which the search will take place
+$search = "search_example"; // string | <a href=\"https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\">How to make an Ungerboeck API search</a>
+
+try {
+    $result = $apiInstance->activitiesGetActivityList($org_code, $search);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ActivitiesApi->activitiesGetActivityList: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_code** | **string**| The organization code in which the search will take place |
+ **search** | **string**| &lt;a href&#x3D;\&quot;https://supportcenter.ungerboeck.com/hc/en-us/articles/115010610608-Searching-Using-the-API\&quot;&gt;How to make an Ungerboeck API search&lt;/a&gt; |
+
+### Return type
+
+[**\FomF\Ungerboeck\Client\Model\ActivitiesModel**](../Model/ActivitiesModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **activitiesPostActivity**
 > \FomF\Ungerboeck\Client\Model\ActivitiesModel activitiesPostActivity($data)
 
-Add an activity
+Basic - Add an activity
 
 ### Example
 ```php
@@ -211,7 +211,7 @@ No authorization required
 # **activitiesPutActivity**
 > \FomF\Ungerboeck\Client\Model\ActivitiesModel activitiesPutActivity($org_code, $account_code, $sequence_number, $data)
 
-Edit an activity
+Basic - Edit an activity
 
 ### Example
 ```php
